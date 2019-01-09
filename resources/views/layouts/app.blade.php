@@ -33,12 +33,12 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
+                   <a href="{{ url('/home') }}"> <ul class="navbar-nav mr-auto">
                         <!-- Use any element to open the sidenav -->
                             <img src = "images/audioNetLogo.png" alt = "logo" width="55px;" height="43px;" 
                             style="margin:0px; 
                                    padding:0px;">
-                       
+                       </a>
                     </ul>
           
                     <!-- Right Side Of Navbar -->

@@ -21,9 +21,11 @@ function closeNav() {
 </head>    
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="#">About</a>
+  <a href="{{ url('/about') }}">About</a>
   <a href="#">Services</a>
-  <a href="#">Contact</a>
+  <a href="#">Discover</a>
+  <a href="#">Events Near You</a>
+  <a href="#">Your Music</a>
 </div>
 
 <!-- Use any element to open the sidenav -->
