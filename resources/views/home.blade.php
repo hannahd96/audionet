@@ -14,7 +14,16 @@ function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
   document.getElementById("main").style.marginLeft= "0";
 }
-  </script>
+
+function openCloseDiv() {
+  var x = document.getElementById("comment_section");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
 
 
 
@@ -22,7 +31,6 @@ function closeNav() {
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="{{ url('/about') }}">About</a>
-  <a href="#">Services</a>
   <a href="#">Discover</a>
   <a href="#">Events Near You</a>
   <a href="#">Your Music</a>
@@ -40,10 +48,13 @@ function closeNav() {
         <div class="user_stories">
             <div class = "user_story_item" style="padding-left:30px;">
                <!-- click on the image to open the modal and add song to story -->
-                    <img src="uploads/avatars/{{ Auth::user()->avatar }}" style="height:75px; width:75px; border-radius:50%">
-                
+                   <a href="#">
+                    	<img src="uploads/avatars/{{ Auth::user()->avatar }}" style="height:65px; width:65px; border-radius:50%">
+                    </a>
+                    <p style="margin-top:5px;">{{ Auth::user()->name }}</p>
             </div>
         </div>
+        <hr>
     </div>
 </div>
 <div class="container">
@@ -51,33 +62,45 @@ function closeNav() {
         <div class="col-md-8">
             <!-- Hello, {{ Auth::user()->name }}. You are logged in! -->
                 
-            <div class = "container">
-                <h2 style="padding-top:20px;">Main Feed</h3>
-                
+            <div class = "container">                
                 <div class="feed_item">
-                    <h4>
+                    <p id="feed_item_date">
+                        20/12/18
+                    </p>
+                    <h4 class="chunky_header">
                         "thank u, next" reaches 150m views
                     </h4>
-                    <p>Ariana Grande's "thank u, next" has accumulated 150 million views on YouTube after just 2 weeks. 
+                    <p>Ariana Grande's <a href="https://www.youtube.com/watch?v=gl1aHhXnN1k">"thank u, next"</a> has accumulated 150 million views on YouTube after just 2 weeks. 
                         The music video features cameos from Johnathon Bennett, Troye Sivan and Colleen Ballinger, and takes 
-                        references from movies like "Mean Girls" and "13 Going On 30". The video is also 2# on Trending.
+                        references from movies like "Mean Girls" and "13 Going On 30". The video is also 2# on Trending. 
+                        <br>
                         <div class="feed_item_image">
                             <img src = "images/thankUNext.jpg" alt="thankUNext" width="40%">
                         </div>
                     </p>
                     <hr>
                     <!-- COMMENT SECTION -->
-                    <h5>Comments</h5>
-                    <form action="" method="POST">
-						Username: <input type="text" name="name"><br>
-						Comment: <input type="text" name="comment"><br>
-						<input type="submit" class="btn btn-primary" name="submitComment" value="Submit">
-				    </form>
-                   
+                    <button onclick="openCloseDiv();" 
+                            class="btn btn-secondary" 
+                            id="comment_button"
+                            style="float:right;">
+                        open / close
+                    </button>
+                        <h5>Comments</h5>
+                            <div id="comment_section">
+                                <form action="" method="POST">
+                                    Username: <input type="text" name="name" class="form-control" style="width:75%"><br>
+                                    Comment: <input type="text" name="comment" class="form-control" style="width:75%"><br>
+                                    <input type="submit" class="btn btn-primary" name="submitComment" value="Submit">
+                                </form>
+                            </div>
                 </div>
                
                 <div class="feed_item">
-                    <h4 class="feed_item_head">
+                    <p id="feed_item_date">
+                        17/12/18
+                    </p>
+                    <h4 class="chunky_header">
                         2019 Grammy Nominations' Snubs and Surprises
                     </h4>
                     <p>

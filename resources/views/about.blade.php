@@ -41,7 +41,7 @@ function closeNav() {
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-7">
-            <h2>About Us</h2>
+            <h2 class="chunky_header">About Us</h2>
                 <p> AudioNet is a web app that allows you to share your music taste with friends. 
                 You can post your own story and see what your friends are listening to by viewing their stories. AudioNet also recommends
                 music to you based on what you post to your story. AudioNet also keeps you up to date with what music events are on near 
@@ -49,16 +49,16 @@ function closeNav() {
                 <br><br>
                 Your Music, Your Network.
                 </p>
-            <img src = "images/audioNetLogo.png" alt = "logo" style="padding-left:80px;">
+           
         </div>
         <div class="col-md-3">
-            <h2>Technology</h2>
+            <h2 class="chunky_header">Technology</h2>
                 <p id="about_para_one">AudioNet is built using a PHP framework called Laravel and front-end framework, Bootstrap. 
                    It utilises the Spotify Web API which incorporates Node.js, an open-source JS environment.
                    The recommender system is built using Python and inherits from Python libraries SckitLearn and Pandas.
                 </p>
                 <br>
-            <h2>Contact Us</h2>
+            <h2 class="chunky_header">Contact Us</h2>
                 <p id="about_para_two">Contact our customer service for help to any questions you have.</p>
                 <b>Phone: </b> <p>0851234567</p>
                 <b>Email: </b> <p>help@audionet.com</p>
