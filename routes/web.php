@@ -19,6 +19,10 @@ Route::get('/about', function () {
     return view('about');
 });
 
+Route::get('/yourMusic', function () {
+    return view('yourMusic');
+});
+
 Route::get('profile', 'UserController@profile');
 Route::post('profile', 'UserController@update_avatar');
 

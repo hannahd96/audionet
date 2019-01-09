@@ -23,7 +23,7 @@ function closeNav() {
   <a href="#">Services</a>
   <a href="#">Discover</a>
   <a href="#">Events Near You</a>
-  <a href="#">Your Music</a>
+  <a href="{{ url('/yourMusic') }}">Your Music</a>
 </div>
 
 <!-- Use any element to open the sidenav -->
@@ -57,7 +57,7 @@ function closeNav() {
                    It utilises the Spotify Web API which incorporates Node.js, an open-source JS environment.
                    The recommender system is built using Python and inherits from Python libraries SckitLearn and Pandas.
                 </p>
-                <br>
+                
             <h2 class="chunky_header">Contact Us</h2>
                 <p id="about_para_two">Contact our customer service for help to any questions you have.</p>
                 <b>Phone: </b> <p>0851234567</p>

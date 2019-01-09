@@ -33,7 +33,7 @@ function openCloseDiv() {
   <a href="{{ url('/about') }}">About</a>
   <a href="#">Discover</a>
   <a href="#">Events Near You</a>
-  <a href="#">Your Music</a>
+  <a href="{{ url('/yourMusic') }}">Your Music</a>
 </div>
 
 <!-- Use any element to open the sidenav -->

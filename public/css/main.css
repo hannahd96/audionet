@@ -1,7 +1,6 @@
 *{
     font-family: Circular, Helvetica, Arial, sans-serif;
     line-height: 1.5;
-    color: #222326;
     font-weight: 400;
 }
 body{
@@ -30,7 +29,7 @@ body{
     margin-top:10px;
     margin-bottom: 10px;
     border:1px solid #dddfe2;
-    background-color: aliceblue;
+    background-color:#ffffff;
 }
 
 .feed_item_image{
