@@ -87,7 +87,6 @@
                 <div class="title m-b-md">
                     AudioNet
                 </div>
-
                 <div id="audioNetLogo">
                     <img src = "images/audioNetLogo.png" alt = "logo" width="130px;" height="110px;">
                 </div>

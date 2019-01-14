@@ -87,7 +87,24 @@ function openCloseDiv() {
         <div class="col-md-8">
             <!-- Hello, {{ Auth::user()->name }}. You are logged in! -->
                 
-            <div class = "container">                
+            <div class = "container">    
+            <div class="feed_item">
+                    <p id="feed_item_date">
+                        14/1/19
+                    </p>
+                    <h4 class="chunky_header">
+                    Sam Smith and Fifth Harmony’s Normani make early charts impact with new duet
+                    </h4>
+                    <p>
+                    Sam Smith could topple reigning chart-topper Ava Max from the number one spot this week with his new single Dancing With A Stranger.
+                    Smith’s song, a collaboration with Fifth Harmony singer Normani, is on course to be this week’s highest new entry, the Official Charts Company said.
+                    The song is currently at number three at the halfway stage of the chart week, based on streams and downloads accrued since it was released on Friday.
+                    <div class="feed_item_image" style="padding-left:80px;">
+                        <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Here it is, &#39;Dancing With A Stranger&#39;. <a href="https://t.co/kdTKNv2rOR">https://t.co/kdTKNv2rOR</a><br>Another musical baby. Popping them out over here!! Hope you enjoy it ❤️ I live for you <a href="https://twitter.com/Normani?ref_src=twsrc%5Etfw">@Normani</a> ❤️ <a href="https://twitter.com/hashtag/DancingWithAStranger?src=hash&amp;ref_src=twsrc%5Etfw">#DancingWithAStranger</a> <a href="https://t.co/ytxjNdqNsV">pic.twitter.com/ytxjNdqNsV</a></p>&mdash; Sam Smith (@samsmith) <a href="https://twitter.com/samsmith/status/1083619517790588929?ref_src=twsrc%5Etfw">January 11, 2019</a></blockquote>
+                        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    </div>
+                    </p>
+                </div>            
                 <div class="feed_item">
                     <p id="feed_item_date">
                         20/12/18
