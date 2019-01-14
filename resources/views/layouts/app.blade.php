@@ -23,7 +23,7 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-            <div class="container">
+            <div class="container" style="margin-top:12.5px; margin-bottom:12.5px;">
                <!-- <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a> -->
@@ -35,9 +35,21 @@
                     <!-- Left Side Of Navbar -->
                    <a href="{{ url('/home') }}"> 
                         <ul class="navbar-nav mr-auto">
-                            <!-- Use any element to open the sidenav -->
-                            <img src = "images/audioNetLogo.png" alt = "logo" width="55px;" height="43px;"
-                            style="margin-bottom:6px;">
+                            <div id="logo_left_part">
+                                <img src="images/audioNetlogo.png" alt="logo" style="width:31px; 
+                                                                                    height:27px; 
+                                                                                    padding:0px; 
+                                                                                    margin:0px 5px 0px 0px;">
+                            </div>
+                            <div id="logo_middle_part">
+                                <img src="images/black_line.png" alt="black_line" style="height:30px; 
+                                                                                        width:20px;
+                                                                                        margin:0px 5px 0px 5px;">                         
+                            </div>
+                            <div id="logo_right_part">
+                                <img src="images/word_logo.png" alt="word_logo" style="height:20px;
+                                                                                        width:80px;">
+                            </div>
                         </ul>
                     </a>
                     
@@ -57,7 +69,7 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre style="position:relative; padding-left:50px;">
-                                <img src="uploads/avatars/{{ Auth::user()->avatar }}" style="width:32px; height:32px; position:absolute; top:10px; left:10px; border-radius:50%">
+                                    <img src="uploads/avatars/{{ Auth::user()->avatar }}" style="width:30px; height:30px; position:absolute; left:10px; border-radius:50%">
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
