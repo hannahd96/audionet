@@ -110,56 +110,24 @@ body{
     border:1px solid #dddfe2;
     background-color:#ffffff;
   }
-    /*   .zoom:hover {
-            -ms-transform: scale(1.5); 
-            -webkit-transform: scale(1.5);
-            transform: scale(1.5); 
-        }
 
-        #audioNetLogo{
-            height:100px;
-            width:100px;
-            background-color:#673ab7;
-            border-radius:50%;
-            position:absolute;
-            top:50%;
-            left:50%;
-            transform: translate(-50%, -50%);
-        }
-        
-        #audioNetLogo img{
-            margin:10px 5px;
-        }
-        
-        #audioNetLogo:hover{
-            cursor:pointer;
-        }
-        
-        #wave{
-            height:100px;
-            width:100px;
-            background-color:silver;
-            position:absolute;
-            top:50%;
-            left:50%;
-            transform:translate(-50%, -50%);
-            border-radius:50%;
-            z-index:-1;
-        }
-        
-        @-webkit-keyframes pulseEffect{
-            from{
-                transfrom: translate(-50%, -50%) scale(0.5);
-                opacity:0.4;
-                }
-                to{
-                    transform:translate(-50%, -50%) scale(3);
-                    opacity: 0;
-                }
-            }
-        
-        #audioNetLogo:hover ~ #wave{
-            -webkit-animation: pulseEffect 2s infinite linear;
-        }
-    */
-
+  .navbar {
+    z-index: 1;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+  .navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-decoration: none;
+  }
+   
+  .main {
+    padding: 16px;
+    margin-top: 30px;
+    height: 1500px;
+  }

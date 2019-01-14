@@ -28,6 +28,8 @@ function openCloseDiv() {
 
 
 </head>    
+<!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+<div id="main" class="main">
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="{{ url('/about') }}">About</a>
@@ -41,11 +43,9 @@ function openCloseDiv() {
     <img src="images/hamburger_menu_icon.png" alt = "hamburger_icon" width="40px" height="40px" style="margin-left:20px;">
 </span>
 
-<!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
-<div id="main">
 <div class="row">
     <div class="col-md-12">
-        <div class="user_stories">
+        <div class="user_stories" style="margin-top:20px;">
             <div class = "user_story_item" style="padding-left:30px;">
                <!-- click on the image to open the modal and add song to story -->
                    <a href="#">
