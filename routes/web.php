@@ -23,6 +23,10 @@ Route::get('/yourMusic', function () {
     return view('yourMusic');
 });
 
+Route::get('/discover', function () {
+    return view('discover');
+});
+
 Route::get('profile', 'UserController@profile');
 Route::post('profile', 'UserController@update_avatar');
 

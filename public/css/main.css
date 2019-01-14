@@ -92,6 +92,24 @@ body{
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
   }
+
+  #detail{
+    list-style:none;
+    padding-top:10px;
+  }
+
+  .profile_section{
+      padding-top:40px;
+  }
+
+  .personal_details{  
+    width:100%;
+    padding:15px;
+    margin-top:10px;
+    margin-bottom: 10px;
+    border:1px solid #dddfe2;
+    background-color:#ffffff;
+  }
     /*   .zoom:hover {
             -ms-transform: scale(1.5); 
             -webkit-transform: scale(1.5);

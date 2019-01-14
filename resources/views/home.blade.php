@@ -31,7 +31,7 @@ function openCloseDiv() {
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="{{ url('/about') }}">About</a>
-  <a href="#">Discover</a>
+  <a href="{{ url('/discover') }}">Discover</a>
   <a href="#">Events Near You</a>
   <a href="{{ url('/yourMusic') }}">Your Music</a>
 </div>
@@ -49,7 +49,7 @@ function openCloseDiv() {
             <div class = "user_story_item" style="padding-left:30px;">
                <!-- click on the image to open the modal and add song to story -->
                    <a href="#">
-                    	<img src="uploads/avatars/{{ Auth::user()->avatar }}" style="height:65px; width:65px; border-radius:50%">
+                    	<img src="uploads/avatars/{{ Auth::user()->avatar }}" style="height:60px; width:60px; border-radius:50%">
                     </a>
                     <p style="margin-top:5px;">{{ Auth::user()->name }}</p>
             </div>
