@@ -13,13 +13,5 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
-// if I get a GET request for /songs, execute the the index api method inside the SongController
-Route::get('/songs', 'SongController@apiIndex');
-Route::get('/songs/{id}', 'SongController@apiShow');
-Route::post('/songs', 'SongController@apiStore');
-Route::put('/songs/{id}', 'SongController@apiUpdate');
-Route::delete('/songs/{id}', 'SongController@apiDelete');
+Route::get('/songs', 'API\SongController@index');
+Route::get('/songs/{id}', 'API\SongController@show');

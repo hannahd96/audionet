@@ -6,5 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Song extends Model
 {
-    //
+    // array of attributes of song
+    protected $fillable = ['title', 'artist', 'album', 'genre', 'year'];
 }

@@ -1,10 +1,26 @@
 *{
-    font-family: Circular, Helvetica, Arial, sans-serif;
+    font-family: 'Nunito', sans-serif;
+    /*font-family: 'Poppins', sans-serif;*/
     line-height: 1.5;
     font-weight: 400;
 }
 body{
     background-color: #e9ebee;
+    /*background-image: url('back_one.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;*/
+}
+.navbar-laravel{
+  background-color: #1a1a1a !important;
+  padding:10px !important;
+}
+navbar-brand{
+  color:white !important;
+  font-weight: bold;
+  font-size:18px;
+}
+.card-header{
+  font-weight: 200;
 }
 .chunky_header{
     margin-block-start: 0.83em;
@@ -172,3 +188,27 @@ body{
   #back-top a:hover span {
     background-color: #777;
   }
+
+  /* Search box */
+input[name="search"] {
+  width: 170px;
+height:18px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 12px;
+  font-family: inherit;
+  background-color: white;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+text-align:left !important;
+}
+
+input[name="search"]:focus {
+  width: 30%;
+}
+
+#transp-back{
+  background-color: rgb(255, 255, 255, 0.5);
+}

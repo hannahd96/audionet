@@ -27,13 +27,18 @@ Route::get('/discover', function () {
     return view('discover');
 });
 
+Route::get('/add_story', function () {
+    return view('add_story');
+});
+
 Route::get('profile', 'UserController@profile');
 Route::post('profile', 'UserController@update_avatar');
 
 Route::auth();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/songs', 'SongController@index')->name('songs');
 
-Route::resource('songs', 'SongController');
+// Route::resource('songs', 'SongController');
 
 Auth::routes();

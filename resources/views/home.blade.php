@@ -5,6 +5,7 @@
   <!--  <link href="{{ asset('css/mystyle.css') }}" rel="stylesheet" type="text/css"> -->
   <link href = "css/main.css" rel="stylesheet">
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
 
   <script>
   $(document).ready(function(){
@@ -73,13 +74,12 @@ function openCloseDiv() {
         <div class="user_stories" style="margin-top:20px;">
             <div class = "user_story_item" style="padding-left:30px;">
                <!-- click on the image to open the modal and add song to story -->
-                   <a href="#">
+                   <a href="{{ url('add_story') }}">
                     	<img src="uploads/avatars/{{ Auth::user()->avatar }}" style="height:60px; width:60px; border-radius:50%">
                     </a>
                     <p style="margin-top:5px;">{{ Auth::user()->name }}</p>
             </div>
         </div>
-        <hr>
     </div>
 </div>
 <div class="container">
@@ -163,8 +163,4 @@ function openCloseDiv() {
             <a href="#top"><span style="font-size:40px;">^</span></a>
         </p>
     </div>
-
-<footer style="padding:20px;">
-    AudioNet 2018 &copy
-</footer>
 @endsection
