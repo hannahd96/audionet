@@ -60,7 +60,7 @@ function openCloseDiv() {
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="{{ url('/about') }}">About</a>
   <a href="{{ url('/songs') }}">Discover</a>
-  <a href="#">Events Near You</a>
+  <a href="{{ url('/events') }}">Events Near You</a>
   <a href="{{ url('/yourMusic') }}">Your Music</a>
 </div>
 

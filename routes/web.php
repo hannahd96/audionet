@@ -31,6 +31,10 @@ Route::get('/add_story', function () {
     return view('add_story');
 });
 
+Route::get('/events', function () {
+    return view('events');
+});
+
 Route::get('profile', 'UserController@profile');
 Route::post('profile', 'UserController@update_avatar');
 

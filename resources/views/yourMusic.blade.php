@@ -32,13 +32,13 @@
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="{{ url('/about') }}">About</a>
-  <a href="{{ url('/discover') }}">Discover</a>
-  <a href="#">Events Near You</a>
+  <a href="{{ url('/songs') }}">Discover</a>
+  <a href="{{ url('/events') }}">Events Near You</a>
   <a href="{{ url('/yourMusic') }}">Your Music</a>
 </div>
 
 <span onclick="openNav()">
-    <img src="images/hamburger_menu_icon.png" alt = "hamburger_icon" width="40px" height="40px" style="margin-left:20px;">
+    <img src="images/hamburger_menu_icon.png" alt = "hamburger_icon" width="40px" height="40px" style="margin-left:20px; margin-top:70px">
 </span>
 
 <div id="main">

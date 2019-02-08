@@ -22,14 +22,14 @@ function closeNav() {
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="{{ url('/about') }}">About</a>
-  <a href="{{ url('/discover') }}">Discover</a>
-  <a href="#">Events Near You</a>
+  <a href="{{ url('/songs') }}">Discover</a>
+  <a href="{{ url('/events') }}">Events Near You</a>
   <a href="{{ url('/yourMusic') }}">Your Music</a>
 </div>
 
 <!-- Use any element to open the sidenav -->
 <span onclick="openNav()">
-    <img src="images/hamburger_menu_icon.png" alt = "hamburger_icon" width="40px" height="40px" style="margin-left:20px;">
+    <img src="images/hamburger_menu_icon.png" alt = "hamburger_icon" width="40px" height="40px" style="margin-left:20px; margin-top:70px;">
 </span>
 
 <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
@@ -55,7 +55,6 @@ function closeNav() {
         <div class="col-md-3">
             <h2 class="chunky_header">Technology</h2>
                 <p id="about_para_one">AudioNet is built using a PHP framework called Laravel and front-end framework, Bootstrap. 
-                   It utilises the Spotify Web API which incorporates Node.js, an open-source JS environment.
                    The recommender system is built using Python and inherits from Python libraries SckitLearn and Pandas.
                 </p>
                 
