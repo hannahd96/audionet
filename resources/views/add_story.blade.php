@@ -95,11 +95,15 @@ function myFunction() {
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class = "container">    
-            <!--
-            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for songs.." 
-                title="Type in a name" autocomplete="off" name = "search" style="margin-bottom:8px; text-align:left;">
-            -->
-
+                <div class="card">
+                    <div class="card-header">
+                        Add User Story
+                    </div>
+                    <div class="card-body">
+                        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for songs.." 
+                        title="Type in a name" autocomplete="off" name = "search" style="margin-bottom:8px; text-align:left;">
+                    </div>
+                </div>
 
             </div>
         </div>   

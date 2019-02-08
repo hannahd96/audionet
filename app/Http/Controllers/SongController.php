@@ -16,7 +16,21 @@ class SongController extends Controller
      */
     public function index()
     {
-        return view('songs.index');
+        $songs = Song::all();
+
+        return view('songs.index')->with(array(
+            'songs' => $songs
+        ));
+    }
+
+    // recommended songs
+    public function yourMusic()
+    {
+        $rec_songs = Song::all();
+
+        return view('yourMusic')->with(array(
+            'songs' => $rec_songs
+        ));
     }
 
 }
