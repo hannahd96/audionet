@@ -5,7 +5,7 @@
   <!--  <link href="{{ asset('css/mystyle.css') }}" rel="stylesheet" type="text/css"> -->
   <link href = "css/main.css" rel="stylesheet">
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Exo|Julius+Sans+One|Questrial|Varela" rel="stylesheet">
 
   <script>
   $(document).ready(function(){
@@ -58,15 +58,31 @@ function openCloseDiv() {
 <div id="main" class="main">
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="{{ url('/home') }}">Home</a>
   <a href="{{ url('/about') }}">About</a>
   <a href="{{ url('/songs') }}">Discover</a>
   <a href="{{ url('/events') }}">Events Near You</a>
   <a href="{{ url('/yourMusic') }}">Your Music</a>
+
+
+  <br><br><br>
+<hr>
+
+<a href="{{ route('logout') }}"
+   onclick="event.preventDefault();
+                 document.getElementById('logout-form').submit();">
+    {{ __('Logout') }}
+</a>
+
+<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+    @csrf
+</form>
+
 </div>
 
 <!-- Use any element to open the sidenav -->
 <span onclick="openNav()">
-    <img src="images/hamburger_menu_icon.png" alt = "hamburger_icon" width="40px" height="40px" style="margin-left:20px; margin-top:20px;">
+    <img src="images/hamburger_menu_icon.png" id="hamburger" alt = "hamburger_icon" width="40px" height="40px">
 </span>
 
 <div class="row">
@@ -82,11 +98,18 @@ function openCloseDiv() {
         </div>
     </div>
 </div>
+<hr>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <!-- Hello, {{ Auth::user()->name }}. You are logged in! -->
-                
+            <div class="container">
+                <h2>Popular Songs</h2>
+                    <div class="popular_song">
+
+                    </div>
+            </div>
+        </div>
+        <div class="col-md-4">                
             <div class = "container">    
             <div class="feed_item">
                     <p id="feed_item_date">
@@ -99,7 +122,7 @@ function openCloseDiv() {
                     Sam Smith could topple reigning chart-topper Ava Max from the number one spot this week with his new single Dancing With A Stranger.
                     Smith’s song, a collaboration with Fifth Harmony singer Normani, is on course to be this week’s highest new entry, the Official Charts Company said.
                     The song is currently at number three at the halfway stage of the chart week, based on streams and downloads accrued since it was released on Friday.
-                    <div class="feed_item_image" style="padding-left:80px;">
+                    <div class="feed_item_image" style="">
                         <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Here it is, &#39;Dancing With A Stranger&#39;. <a href="https://t.co/kdTKNv2rOR">https://t.co/kdTKNv2rOR</a><br>Another musical baby. Popping them out over here!! Hope you enjoy it ❤️ I live for you <a href="https://twitter.com/Normani?ref_src=twsrc%5Etfw">@Normani</a> ❤️ <a href="https://twitter.com/hashtag/DancingWithAStranger?src=hash&amp;ref_src=twsrc%5Etfw">#DancingWithAStranger</a> <a href="https://t.co/ytxjNdqNsV">pic.twitter.com/ytxjNdqNsV</a></p>&mdash; Sam Smith (@samsmith) <a href="https://twitter.com/samsmith/status/1083619517790588929?ref_src=twsrc%5Etfw">January 11, 2019</a></blockquote>
                         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                     </div>

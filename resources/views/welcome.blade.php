@@ -17,14 +17,20 @@
         <style>
             html, body {
                /* background-color: #fff;*/
-                color: #636b6f;
+                /* color: #636b6f; */
+                color:white;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
                 height: 100vh;
                 margin: 0;
-                background-image: url('css/back_six.jpg'); 
+                background-image: url('back_08.jpg'); 
                 background-repeat:no-repeat; 
                 background-size:cover;
+            }
+
+            #slogan{
+                font-size:25px;
+                letter-spacing:2px;
             }
 
             .full-height {
@@ -52,11 +58,11 @@
             }
 
             .title {
-                font-size: 84px;
+                font-size: 88px;
             }
 
             .links > a {
-                color: #636b6f;
+                color: white;
                 padding: 0 25px;
                 font-size: 13px;
                 font-weight: 600;
@@ -66,7 +72,8 @@
             }
 
             .m-b-md {
-                margin-bottom: 30px;
+                margin-bottom: 20px;
+                letter-spacing:4px;
             }
 
         </style>
@@ -87,10 +94,11 @@
                 </div>
             @endif
 
-            <div class="content" id="transp-back" style="padding:75px 350px 75px 350px;">
+            <div class="content"  style="padding:75px 290px 75px 290px;">
                 <div class="title m-b-md">
                     AudioNet
                 </div>
+                <p id="slogan">Your Music, Your Network</p>          
             </div>
         </div>
     </body>

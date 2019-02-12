@@ -5,7 +5,7 @@
   <!--  <link href="{{ asset('css/mystyle.css') }}" rel="stylesheet" type="text/css"> -->
   <link href = "css/main.css" rel="stylesheet">
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Exo|Julius+Sans+One|Questrial|Varela" rel="stylesheet">
 
   <script>
   $(document).ready(function(){
@@ -62,15 +62,30 @@ function openCloseDiv() {
 <div id="main" class="main">
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="{{ url('/home') }}">Home</a>
   <a href="{{ url('/about') }}">About</a>
   <a href="{{ url('/songs') }}">Discover</a>
   <a href="{{ url('/events') }}">Events Near You</a>
   <a href="{{ url('/yourMusic') }}">Your Music</a>
+
+<br><br><br>
+<hr>
+
+<a href="{{ route('logout') }}"
+   onclick="event.preventDefault();
+                 document.getElementById('logout-form').submit();">
+    {{ __('Logout') }}
+</a>
+
+<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+    @csrf
+</form>
 </div>
+
 
 <!-- Use any element to open the sidenav -->
 <span onclick="openNav()">
-    <img src="images/hamburger_menu_icon.png" alt = "hamburger_icon" width="40px" height="40px" style="margin-left:20px; margin-top:50px;">
+    <img src="images/hamburger_menu_icon.png" id = "hamburger" alt = "hamburger_icon">
 </span>
 <div class="container">
     

@@ -1,11 +1,26 @@
 *{
-    font-family: 'Nunito', sans-serif;
+  /* font-family: 'Questrial', sans-serif; */
+  /* font-family: 'Exo', sans-serif; */
+   font-family: 'Varela', sans-serif;
+ /* font-family: 'Julius Sans One', sans-serif; */
     line-height: 1.5;
     font-weight: 400;
 }
 body{
     background-color: #e9ebee;
+    /* background-image: url('back_one.jpg'); */
 }
+
+#hamburger{
+  margin-left:20px; 
+  margin-top:70px;
+  width: 40px;
+  height: 40px;
+}
+#mySidenav a{
+  font-size:20px;
+}
+
 .navbar-laravel{
   background-color: #1a1a1a !important;
   padding:10px !important;
@@ -179,7 +194,7 @@ body{
   }
 
 #transp-back{
-  background-color: rgb(255, 255, 255, 0.5);
+  background-color: rgb(255, 255, 255, 0.2);
 }
 
 .search-container{
@@ -242,4 +257,12 @@ input[type=text]:focus {
 #sort_btn{
   font-size:13px;
   padding:5px 10px 5px 10px;
+}
+.popular_song{
+  width:100%;
+  padding:15px;
+  margin-top:10px;
+  margin-bottom: 10px;
+  border:1px solid #dddfe2;
+  background-color:#ffffff;
 }
