@@ -266,3 +266,7 @@ input[type=text]:focus {
   border:1px solid #dddfe2;
   background-color:#ffffff;
 }
+#feed_items{
+  height:400px;
+  overflow:auto;
+}

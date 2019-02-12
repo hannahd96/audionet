@@ -110,7 +110,7 @@ function openCloseDiv() {
             </div>
         </div>
         <div class="col-md-4">                
-            <div class = "container">    
+            <div class = "container" id="feed_items">    
             <div class="feed_item">
                     <p id="feed_item_date">
                         14/1/19
