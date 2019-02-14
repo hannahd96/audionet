@@ -6,6 +6,7 @@
   <!--  <link href="{{ asset('css/mystyle.css') }}" rel="stylesheet" type="text/css"> -->
   <link href = "css/main.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Exo|Julius+Sans+One|Questrial|Varela" rel="stylesheet">
   <script>
     function openNav() {
@@ -17,6 +18,28 @@
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("main").style.marginLeft= "0";
     }
+
+    // hide #back-top first
+$("#back-top").hide();
+
+// fade in #back-top
+$(function () {
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+            $('#back-top').fadeIn();
+        } else {
+            $('#back-top').fadeOut();
+        }
+    });
+
+    // scroll body to 0px on click
+    $('#back-top a').click(function () {
+        $('body,html').animate({
+            scrollTop: 0
+        }, 800);
+        return false;
+    });
+});
 
     function myFunction() {
       var input, filter, table, tr, td, i;
@@ -183,7 +206,7 @@ function sortTableOldest() {
                                           <td>{{ $song->genre }}</td>
                                           <td>{{ $song->year }}</td>
                                           <td>
-                                            <audio controls style="width:58px; height:18px;">
+                                            <audio controls style="width:100px; height:18px;">
                                               <source src="{{ $song->song_link }}" type="audio/mpeg">
                                             </audio>
                                           </td>
@@ -200,4 +223,9 @@ function sortTableOldest() {
         </div>
     </div>
 </div>
+<div id="scroll_top_auto" style="float:right; text-align:right;">
+        <p id="back-top">
+            <a href="#top"><span style="font-size:40px;">^</span></a>
+        </p>
+    </div>
 @endsection

@@ -10,29 +10,29 @@
   <script>
   $(document).ready(function(){
 
-// hide #back-top first
-$("#back-top").hide();
+// // hide #back-top first
+// $("#back-top").hide();
 
 // fade in #back-top
-$(function () {
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 100) {
-            $('#back-top').fadeIn();
-        } else {
-            $('#back-top').fadeOut();
-        }
-    });
+// $(function () {
+//     $(window).scroll(function () {
+//         if ($(this).scrollTop() > 100) {
+//             $('#back-top').fadeIn();
+//         } else {
+//             $('#back-top').fadeOut();
+//         }
+//     });
 
-    // scroll body to 0px on click
-    $('#back-top a').click(function () {
-        $('body,html').animate({
-            scrollTop: 0
-        }, 800);
-        return false;
-    });
-});
+//     // scroll body to 0px on click
+//     $('#back-top a').click(function () {
+//         $('body,html').animate({
+//             scrollTop: 0
+//         }, 800);
+//         return false;
+//     });
+// });
 
-});
+ });
   function openNav() {
   document.getElementById("mySidenav").style.width = "250px";
   document.getElementById("main").style.marginLeft = "250px";
@@ -103,9 +103,24 @@ function openCloseDiv() {
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="container">
-                <h2>Popular Songs</h2>
-                    <div class="popular_song">
-
+                    <div class="popular_song_container">
+                        <div class="popular_song_table">
+                            <table class="table table-striped">
+                                <thead>Popular Songs</thead>
+                                    <tbody>
+                                        <tr>
+                                            <th>Song</th>
+                                            <th>Score</th>
+                                            <th>Rank</th>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                            </table>
+                        </div>
                     </div>
             </div>
         </div>
@@ -143,9 +158,9 @@ function openCloseDiv() {
                             <img src = "images/thankUNext.jpg" alt="thankUNext" width="40%">
                         </div>
                     </p>
-                    <hr>
+                    
                     <!-- COMMENT SECTION -->
-                    <button onclick="openCloseDiv();" 
+                    <!-- <button onclick="openCloseDiv();" 
                             class="btn btn-secondary" 
                             id="comment_button"
                             style="float:right;">
@@ -158,7 +173,7 @@ function openCloseDiv() {
                                     Comment: <input type="text" name="comment" class="form-control" style="width:75%"><br>
                                     <input type="submit" class="btn btn-primary" name="submitComment" value="Submit">
                                 </form>
-                            </div>
+                            </div> -->
                 </div>
                
                 <div class="feed_item">
@@ -181,9 +196,9 @@ function openCloseDiv() {
    
 </div>
 </div>
-<div id="scroll_top_auto" style="float:right; text-align:right;">
+<!-- <div id="scroll_top_auto" style="float:right; text-align:right;">
         <p id="back-top">
             <a href="#top"><span style="font-size:40px;">^</span></a>
         </p>
-    </div>
+    </div> -->
 @endsection

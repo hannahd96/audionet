@@ -201,15 +201,6 @@ body{
   margin:20px 0px 20px 0px;
 }
 
-div.results{
-  height: 290px;
-  overflow: auto;
-}
-/* 
-thead{
-  z-index: 1;
-  position: fixed;
-}  */
 
 /*   START OF SCROLL BAR */
 /* width */
@@ -258,7 +249,7 @@ input[type=text]:focus {
   font-size:13px;
   padding:5px 10px 5px 10px;
 }
-.popular_song{
+.popular_song_container{
   width:100%;
   padding:15px;
   margin-top:10px;
@@ -266,6 +257,10 @@ input[type=text]:focus {
   border:1px solid #dddfe2;
   background-color:#ffffff;
 }
+.popular_song_item{
+  font-size: 14px;
+}
+
 #feed_items{
   height:400px;
   overflow:auto;

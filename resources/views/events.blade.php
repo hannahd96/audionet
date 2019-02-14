@@ -90,11 +90,13 @@ function openCloseDiv() {
 <div class="container">
     
 <h1 class="chunky-header">Events Near You</h1>
-<br>
+  <div class="row justify-content-center">
+    Explore the selection of events happening near you. Use the arrows to navigate between events.
+  </div><br>
     <div class="row justify-content-center">
     
         <div w-type="event-discovery" w-tmapikey="sGGjahl4Tb1oMn6IPywOyifpp1z2HOHo" w-googleapikey="AIzaSyAXa-2TaLraEJWf3WNgdcmwLDLwl54zvno" 
-            w-keyword="" w-theme="simple" w-colorscheme="light" w-width="900" w-height="400" w-size="25" w-border="0" w-borderradius="4" 
+            w-keyword="" w-theme="simple" w-colorscheme="light" w-width="800" w-height="400" w-size="25" w-border="0" w-borderradius="4" 
             w-postalcode="" w-radius="25" w-period="week" w-layout="horizontal" w-attractionid="" w-promoterid="" w-venueid="" w-affiliateid=""
             w-segmentid="" w-proportion="custom" w-titlelink="off" w-sorting="groupByName" w-id="id_a7bhp" w-countrycode="IE" w-source="" w-city=""
             w-latlong="">
