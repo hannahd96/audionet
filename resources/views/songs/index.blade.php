@@ -171,6 +171,7 @@ function sortTableOldest() {
                                       <th>Album</th>
                                       <th>Genre</th>
                                       <th>Year</th>
+                                      <th>Listen</th>
                                   </thead>
                                   
                                   <tbody>
@@ -181,6 +182,11 @@ function sortTableOldest() {
                                           <td>{{ $song->album }}</td>
                                           <td>{{ $song->genre }}</td>
                                           <td>{{ $song->year }}</td>
+                                          <td>
+                                            <audio controls style="width:58px; height:18px;">
+                                              <source src="{{ $song->song_link }}" type="audio/mpeg">
+                                            </audio>
+                                          </td>
                                       </tr>
                               @endforeach
                                   </tbody>
