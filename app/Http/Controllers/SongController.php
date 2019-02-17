@@ -9,16 +9,20 @@ use App\Song;
 
 class SongController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $songs = Song::all();
 
         return view('songs.index')->with(array(
+            'songs' => $songs
+        ));
+    }
+
+    public function add_story(){
+
+        $songs = Song::all();
+
+        return view('add_story')->with(array(
             'songs' => $songs
         ));
     }

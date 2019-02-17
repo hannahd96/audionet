@@ -45,7 +45,7 @@ function closeNav() {
     <img src="images/hamburger_menu_icon.png" id = "hamburger" alt = "hamburger_icon">
 </span>
 
-<!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+<!-- Add all page content inside this div if you want the side nav to push page content to the right -->
 <div id="main">
 <div class="row">
     <div class="col-md-12">
@@ -72,7 +72,6 @@ function closeNav() {
                 </p>
                 
             <h2 class="chunky_header">Contact Us</h2>
-                <p id="about_para_two">Contact our customer service for help to any questions you have.</p>
                 <b>Phone: </b> <p>0851234567</p>
                 <b>Email: </b> <p>help@audionet.com</p>
         </div>

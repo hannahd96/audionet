@@ -8,61 +8,36 @@
   <link href="https://fonts.googleapis.com/css?family=Exo|Julius+Sans+One|Questrial|Varela" rel="stylesheet">
 
   <script>
-  $(document).ready(function(){
+    function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+    }
 
-// // hide #back-top first
-// $("#back-top").hide();
+    function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+    }
 
-// fade in #back-top
-// $(function () {
-//     $(window).scroll(function () {
-//         if ($(this).scrollTop() > 100) {
-//             $('#back-top').fadeIn();
-//         } else {
-//             $('#back-top').fadeOut();
-//         }
-//     });
-
-//     // scroll body to 0px on click
-//     $('#back-top a').click(function () {
-//         $('body,html').animate({
-//             scrollTop: 0
-//         }, 800);
-//         return false;
-//     });
-// });
-
- });
-  function openNav() {
-  document.getElementById("mySidenav").style.width = "250px";
-  document.getElementById("main").style.marginLeft = "250px";
-}
-
-function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
-  document.getElementById("main").style.marginLeft= "0";
-}
-
-function openCloseDiv() {
-  var x = document.getElementById("comment_section");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
+    function openCloseDiv() {
+    var x = document.getElementById("comment_section");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+    }
 </script>
 
 </head>    
 <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
 <div id="main" class="main">
-<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="{{ url('/home') }}">Home</a>
-  <a href="{{ url('/about') }}">About</a>
-  <a href="{{ url('/songs') }}">Discover</a>
-  <a href="{{ url('/events') }}">Events Near You</a>
-  <a href="{{ url('/yourMusic') }}">Your Music</a>
+    <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="{{ url('/home') }}">Home</a>
+    <a href="{{ url('/about') }}">About</a>
+    <a href="{{ url('/songs') }}">Discover</a>
+    <a href="{{ url('/events') }}">Events Near You</a>
+    <a href="{{ url('/yourMusic') }}">Your Music</a>
 
 
   <br><br><br>
@@ -86,17 +61,24 @@ function openCloseDiv() {
 </span>
 
 <div class="row">
-    <div class="col-md-12">
-        <div class="user_stories" style="margin-top:20px;">
-            <div class = "user_story_item" style="padding-left:30px;">
-               <!-- click on the image to open the modal and add song to story -->
-                   <a href="{{ url('add_story') }}">
-                    	<img src="uploads/avatars/{{ Auth::user()->avatar }}" style="height:60px; width:60px; border-radius:50%">
-                    </a>
+    <table>
+        <tbody>
+            <tr>
+                <a href="{{ url('add_story') }}" class="user_story" style="margin-left:50px;">
+                    <img src="uploads/avatars/{{ Auth::user()->avatar }}" id="story_img">
                     <p style="margin-top:5px;">{{ Auth::user()->name }}</p>
-            </div>
-        </div>
-    </div>
+                </a>
+                
+                @foreach ($stories as $story) 
+
+                <a href="{{ route('stories.show', $story->id) }}" class="user_story">
+                    <img src="uploads/avatars/{{ $story->user->avatar }}" id="story_img">
+                    <p style="margin-top:5px;">{{ $story->user->name }}</p>
+                </a>
+                @endforeach
+            </tr>
+        </tbody>
+    </table>
 </div>
 <hr>
 <div class="container">
@@ -108,7 +90,18 @@ function openCloseDiv() {
                             <table class="table table-striped">
                                 <thead>Popular Songs</thead>
                                     <tbody>
-                                        <tr>
+                                    <!-- we will try to get the data from the json db -->
+                                    <script>
+                                        console.log("hey there, i run")
+                                        $(document).ready(function(){
+                                            $.getJSON( "http://localhost:8080/listofsongs", function( data ) {
+                                                console.log(data);
+                                                
+                                            });
+                                        });
+
+                                    </script>
+                                        <!-- <tr>
                                             <th>Song</th>
                                             <th>Score</th>
                                             <th>Rank</th>
@@ -117,7 +110,7 @@ function openCloseDiv() {
                                             <td></td>
                                             <td></td>
                                             <td></td>
-                                        </tr>
+                                        </tr> -->
                                     </tbody>
                             </table>
                         </div>
@@ -126,6 +119,7 @@ function openCloseDiv() {
         </div>
         <div class="col-md-4">                
             <div class = "container" id="feed_items">    
+                News Feed
             <div class="feed_item">
                     <p id="feed_item_date">
                         14/1/19

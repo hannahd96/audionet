@@ -3,11 +3,12 @@
 
 @section('content')
 <head>
-  <!--  <link href="{{ asset('css/mystyle.css') }}" rel="stylesheet" type="text/css"> -->
   <link href = "css/main.css" rel="stylesheet">
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Exo|Julius+Sans+One|Questrial|Varela" rel="stylesheet">
+
   <script>
     function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
@@ -145,15 +146,15 @@ function sortTableOldest() {
 <br><br><br>
 <hr>
 
-<a href="{{ route('logout') }}"
-   onclick="event.preventDefault();
-                 document.getElementById('logout-form').submit();">
-    {{ __('Logout') }}
-</a>
+  <a href="{{ route('logout') }}"
+    onclick="event.preventDefault();
+                  document.getElementById('logout-form').submit();">
+      {{ __('Logout') }}
+  </a>
 
-<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-    @csrf
-</form>
+  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+      @csrf
+  </form>
 </div>
 
 <span onclick="openNav()">

@@ -81,12 +81,16 @@ function openCloseDiv() {
     </div>
     <div class="row justify-content-center">
         <div class="col-md-8">
-            
-               <table class="table">
+            <div class="container">
+            <table class="table">
                  <tbody>
                    <tr>
                      <td>Name</td>
-                     <td>{{ Auth::user()->name }}</td>
+                     <td><b>{{ Auth::user()->name }}</b></td>
+                   </tr>
+                   <tr>
+                     <td>Email</td>
+                     <td><b>{{ Auth::user()->email }}</b></td>
                    </tr>
                    <tr>
                      <td>Favourite Artist</td>
@@ -99,6 +103,8 @@ function openCloseDiv() {
                    </tr>
                  </tbody>
                </table>  
+            </div>
+      
         </div>
     </div>
     </div>
