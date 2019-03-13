@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Story;
 //stuff we added in
 use Symfony\Component\Process\Process;
@@ -28,9 +29,13 @@ class HomeController extends Controller
     public function index()
     {
         $stories = Story::all();
+
+        // $rec_songs = DB::select("SELECT * FROM songs WHERE genre = 'Pop'");
+        
+        // return var_dump($rec_songs);
+
         return view('home')->with([
-            'stories' => $stories
-        ]);
+            'stories' => $stories]);
 
     // how do we send this into the database when the user accesses the home page  
         //  $process = new Process('C:\Users\hdevl\AppData\Local\Programs\Python\Python37\python C:\xampp\htdocs\songRec.py');

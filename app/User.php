@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'avatar', 'password', 'favourite_song'
+        'name', 'email', 'avatar', 'password'
     ];
 
     /**
@@ -25,7 +25,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'remember_token'
     ];
     
     public function stories() {
@@ -39,4 +39,53 @@ class User extends Authenticatable
     public function ratings() {
         return $this->hasMany('App\SongRating');
     }
+
+    // public static function recommended(){
+    //     return $this->otherSongs()->sortByDesc(function ($m) { return $m->ratings(); })->take(8);
+    // }
+
+    // public function songObjects(){
+    //     $mySongs = collect([]);
+    //     foreach ($this->ratings as $rating) {
+    //         foreach ($rating->songs as $song) {
+    //             if (!Song::inCollection($song, $mySongs)) {
+    //                 $mySongs->push($song);
+    //             }
+    //         }
+    //     }
+    //     return $mySongs;
+    // }
+  
+    // public function similarUsers() {
+    //     $similarUsers = collect([]);
+    //     foreach ($this->songs() as $song) {
+    //         $ratings = $song->raitngs;
+    //         foreach ($songs as $song) {
+    //             $user = $rating->user;
+    //             if ($user->id != $this->id) {
+    //                 if ($similarUsers->first(function($c) use ($user) { return $c->id == $user->id; }) == null) {
+    //                     $similarUsers->push($user);
+    //                 }
+    //             }
+    //         }
+    //     }
+    //     return $similarUsers;
+    // }
+  
+    // public function otherSongs() {
+    //      $mySongs = $this->movies();
+    //      $otherSongs = collect([]);
+    //      foreach ($this->similarUsers() as $user) {
+    //          $ratings = $user->ratings;
+    //          foreach ($ratings as $rating) {
+    //              $song = $rating->songs;
+    //              foreach ($songs as $song) {
+    //                  if (!Song::inCollection($song, $mySongs) && !Song::inCollection($song, $otherSongs)) {
+    //                      $otherSongs->push($song);
+    //                  }
+    //              }
+    //          }
+    //      }
+    //      return $otherSongs;
+    // }
 }

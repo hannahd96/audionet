@@ -31,12 +31,12 @@ body{
 }
 
 nav{
-  height:120px;
+  height:111px;
 }
 
 .navbar-laravel{
   padding:10px !important;
-  background-color: #232323;
+  background-color: rgb(35,35,35,0.8);
   color:white !important;
 }
 
@@ -276,4 +276,24 @@ ul{
 
 #song_item li{
   margin:10px 0px 10px 0px;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
 }

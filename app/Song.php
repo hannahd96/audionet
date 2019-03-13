@@ -3,6 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class Song extends Model
 {
@@ -33,13 +35,37 @@ class Song extends Model
     public function averageRating() {
         $result = 5.0;
         $ratings = $this->ratings;
+        // if there are more than 0 ratings for a song..
         if ($ratings->count() > 0) {
             $total = 0.0;
+            // total is equal to 0.0 + rating for the song
             foreach ($ratings as $rating) {
                 $total = $total + $rating->rating;
             }
+            // result is equal to 0.0 / number of ratings for a song
             $result = $total / $ratings->count();
         }
+        // return the result (i.e. avg)
         return $result;
     }
+
+    public static function recommended(){
+        //
+    }
+
+
+    public static function popMusic($num) {
+        
+        return Song::where('genre', '=', 'Pop')->take(5)->get();
+
+        // $rec_songs = DB::table('songs')->where('genre', 'Pop')->first();
+        // echo $rec_songs->title;
+    }
+
+    public static function electronicMusic(){
+
+        return Song::where('genre', '=', 'Electronic')->take(5)->get();
+
+    }
+        
 }

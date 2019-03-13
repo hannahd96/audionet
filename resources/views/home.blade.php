@@ -118,24 +118,104 @@
             <div class="container">
                     <div class="popular_song_container">
                         <div class="popular_song_table">
-                           Popular Songs
-                           <ul>
-                           @foreach (App\Song::top(5) as $song)
-                               <li>{{ $song->title }}</li>
-                           @endforeach
-                           </ul>
+                           <h5>Popular Songs</h5>
+                           <table class="table">
+                                <th>Song Title</th>
+                                <th>Artist</th>
+                                <th>Listen</th>
+                                <tbody>
+                                <!-- return top 5 popular songs -->
+                                    @foreach (App\Song::top(5) as $song)
+                                    <tr>
+                                        <td>{{ $song->title }}</td>
+                                        <td>{{ $song->artist }}</td>
+                                        <td>
+                                            <audio controls style="width:100%; height:18px;">
+                                                <source src="{{ $song->song_link }}" type="audio/mpeg">
+                                            </audio>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                           </table>
+                        </div>
+                    </div>
+                    <!-- <div class="rec_songs_container">
+                        <div class="rec_songs_table">
+                           <h5>Suggestions For You</h5>
+                                
+                           
+                             
+
+                            <table class="table">
+                                <th>Song Title</th>
+                                <th>Artist</th>
+                                <th>Listen</th>
+                                <tbody>
+                                
+                                </tbody>
+                            </table>
+
+
+                        </div>
+                    </div> -->
+                    <div class="rec_songs_container">
+                        <div class="rec_songs_table">
+                           <h5>Pop Music</h5>
+                            
+                           <table class="table">
+                                <th>Song Title</th>
+                                <th>Artist</th>
+                                <th>Listen</th>
+                                <tbody>
+                                
+                                @foreach (App\Song::popMusic(5) as $song)
+                                    <tr>
+                                        <td>{{ $song->title }}</td>
+                                        <td>{{ $song->artist }}</td>
+                                        <td>
+                                            <audio controls style="width:100%; height:18px;">
+                                                <source src="{{ $song->song_link }}" type="audio/mpeg">
+                                            </audio>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                               
+                                </tbody>
+                            </table>
+
                         </div>
                     </div>
                     <div class="rec_songs_container">
                         <div class="rec_songs_table">
-                            Suggestions For You                   
+                           <h5>Electronic Music</h5>
+                            <table class="table">
+                                <th>Song Title</th>
+                                <th>Artist</th>
+                                <th>Listen</th>
+                                <tbody>
+                                @foreach (App\Song::electronicMusic(5) as $song)
+                                    <tr>
+                                        <td>{{ $song->title }}</td>
+                                        <td>{{ $song->artist }}</td>
+                                        <td>
+                                            <audio controls style="width:100%; height:18px;">
+                                                <source src="{{ $song->song_link }}" type="audio/mpeg">
+                                            </audio>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+
+
                         </div>
                     </div>
             </div>
         </div>
         <div class="col-md-4">                
-            News Feed
-        <div id="showContainer">
+            
+        <div id="showContainer" style="margin-top:12%;">
             
             <div class="navButton" id="previous" style = "float:left">
                 <

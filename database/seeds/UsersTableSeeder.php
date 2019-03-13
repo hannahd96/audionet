@@ -21,7 +21,6 @@ class UsersTableSeeder extends Seeder
             $u->name = $faker->name;
             $u->email = $faker->email;
             $u->password = bcrypt("secret");
-            $u->favourite_song = $songs->random()->title;
             $u->save();
         }
     }

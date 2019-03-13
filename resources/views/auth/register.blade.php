@@ -64,24 +64,6 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('favourite_song') ? ' has-error' : '' }}">
-                            <label for="favourite_song" class="col-md-4 control-label">Favourite Artist</label>
-
-                            <div class="col-md-6">
-                                <select class = "form-control" name="song_id">
-                                    @foreach ($songs as $song)
-                                        <option value="{{ $song->id }}">{{ $song->title }} - {{ $song->artist }}</option>
-                                    @endforeach
-                                </select>
-                    
-                                @if ($errors->has('favourite_song'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('favourite_song') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
