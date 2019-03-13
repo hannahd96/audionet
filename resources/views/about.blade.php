@@ -5,49 +5,8 @@
   <!--  <link href="{{ asset('css/mystyle.css') }}" rel="stylesheet" type="text/css"> -->
   <link href="https://fonts.googleapis.com/css?family=Exo|Julius+Sans+One|Questrial|Varela" rel="stylesheet">
   <link href = "css/main.css" rel="stylesheet">
-  <script>
-  function openNav() {
-  document.getElementById("mySidenav").style.width = "250px";
-  document.getElementById("main").style.marginLeft = "250px";
-}
 
-function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
-  document.getElementById("main").style.marginLeft= "0";
-}
-  </script>
-</head>  
-
-<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="{{ url('/home') }}">Home</a>
-  <a href="{{ url('/about') }}">About</a>
-  <a href="{{ url('/songs') }}">Discover</a>
-  <a href="{{ url('/events') }}">Events Near You</a>
-  <a href="{{ url('/yourMusic') }}">Your Music</a>
-  
-<br><br><br>
-<hr>
-
-<a href="{{ route('logout') }}"
-   onclick="event.preventDefault();
-                 document.getElementById('logout-form').submit();">
-    {{ __('Logout') }}
-</a>
-
-<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-    @csrf
-</form>
-</div>
-
-<!-- Use any element to open the sidenav -->
-<span onclick="openNav()">
-    <img src="images/hamburger_menu_icon.png" id = "hamburger" alt = "hamburger_icon">
-</span>
-
-<!-- Add all page content inside this div if you want the side nav to push page content to the right -->
-<div id="main">
-<div class="row">
+<div class="row" id="top-row">
     <div class="col-md-12">
       <!---->
     </div>
@@ -60,9 +19,20 @@ function closeNav() {
                 You can post your own story and see what your friends are listening to by viewing their stories. AudioNet also recommends
                 music to you based on what you post to your story. AudioNet also keeps you up to date with what music events are on near 
                 you so you know when your favourite artist is performing in your city, you'll know.
-                <br><br>
+                
                 Your Music, Your Network.
                 </p>
+                
+                Check out our demo video down below 
+                <br><br>
+            <div id="video" style="margin:0px; padding:0px;">
+                <video width="70%" style="margin-left:15%;" controls>
+                    <source src="about_vid.mp4" type="video/mp4">
+                    <source src="about_vid.ogg" type="video/ogg">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+               
            
         </div>
         <div class="col-md-3">

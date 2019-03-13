@@ -27,14 +27,14 @@ class SongController extends Controller
         ));
     }
 
-    // recommended songs
-    public function yourMusic()
-    {
-        $rec_songs = Song::all();
+    // // recommended songs
+    // public function yourMusic()
+    // {
+    //     $songs = Song::all();
 
-        return view('yourMusic')->with(array(
-            'songs' => $rec_songs
-        ));
-    }
+    //     return view('yourMusic')->with(array(
+    //         'songs' => $songs
+    //     ));
+    // }
 
 }

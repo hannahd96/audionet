@@ -13,5 +13,6 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/songs', 'API\SongController@index');
-Route::get('/songs/{id}', 'API\SongController@show');
+// Route::get('/songs', 'API\SongController@index');
+// Route::get('/songs/{id}', 'API\SongController@show');
+// Route::get('/stories/{id}', 'API\StoryController@show');

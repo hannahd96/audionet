@@ -11,17 +11,24 @@
 |
 */
 
+use App\Song;
+
 Route::get('/', function () {
-    return view('welcome');
+
+    $songs = Song::all();
+
+    return view('welcome')->with(array(
+        'songs' => $songs
+    ));
 });
 
 Route::get('/about', function () {
     return view('about');
 });
 
-Route::get('/yourMusic', function () {
-    return view('yourMusic');
-});
+// Route::get('/yourMusic', function () {
+//     return view('yourMusic');
+// });
 
 Route::get('/discover', function () {
     return view('discover');
@@ -42,10 +49,13 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/songs', 'SongController@index')->name('songs');
+Route::get('/yourMusic', 'SongRatingController@yourMusic')->name('yourMusic');
 
 // user stories
-Route::get('/add_story', 'SongController@add_story')->name('songs');
+// Route::get('/add_story', 'SongController@add_story')->name('songs');
 
 Route::resource('stories', 'StoryController');
+Route::get('songs/{id}/ratings/create', 'SongRatingController@create')->name('song_ratings.create');
+Route::post('songs/{id}/ratings', 'SongRatingController@store')->name('song_ratings.store');
 
 Auth::routes();

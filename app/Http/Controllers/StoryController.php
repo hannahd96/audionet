@@ -1,8 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Story;
+use App\Song;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class StoryController extends Controller
 {
@@ -23,7 +26,13 @@ class StoryController extends Controller
      */
     public function create()
     {
-        //
+        $songs = Song::all();
+
+        return view('stories.create')->with(array(
+            'songs' => $songs
+        ));
+
+       // return view('stories.create');
     }
 
     /**
@@ -34,7 +43,18 @@ class StoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // create new story
+         $story = new Story();
+         // get id of user who is creating the story
+         $story->user_id = Auth::user()->id;
+         // get id of song used for story
+         $story->song_id = $request->input('song_id'); 
+         // save story
+         $story->save();
+
+        $session = $request->session()->flash('message', 'Story added successfully!');
+
+        return redirect()->route('home');
     }
 
     /**
@@ -45,7 +65,14 @@ class StoryController extends Controller
      */
     public function show($id)
     {
-        //
+        $story = Story::findOrFail($id);
+
+        // $song = Song::findOrFail($id);
+        // $user = User::findOrFail($id);
+
+        return view('stories.show')->with(array(
+            'story' => $story
+        ));
     }
 
     /**

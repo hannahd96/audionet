@@ -23,14 +23,15 @@
                 font-weight: 200;
                 height: 100vh;
                 margin: 0;
-                background-image: url('back_08.jpg'); 
+                background-image: url('css/background_02.jpg'); 
                 background-repeat:no-repeat; 
                 background-size:cover;
             }
 
             #slogan{
-                font-size:25px;
+                font-size:28px;
                 letter-spacing:2px;
+                
             }
 
             .full-height {
@@ -58,7 +59,7 @@
             }
 
             .title {
-                font-size: 88px;
+                font-size: 90px;
             }
 
             .links > a {
@@ -72,8 +73,7 @@
             }
 
             .m-b-md {
-                margin-bottom: 20px;
-                letter-spacing:4px;
+                letter-spacing:10px;
             }
 
         </style>
@@ -94,7 +94,7 @@
                 </div>
             @endif
 
-            <div class="content"  style="padding:75px 290px 75px 290px;">
+            <div class="content"  style="">
                 <div class="title m-b-md">
                     AudioNet
                 </div>

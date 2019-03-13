@@ -5,58 +5,17 @@
   <!--  <link href="{{ asset('css/mystyle.css') }}" rel="stylesheet" type="text/css"> -->
   <link href="https://fonts.googleapis.com/css?family=Exo|Julius+Sans+One|Questrial|Varela" rel="stylesheet">
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
+  
+    <script type="text/javascript">
+     
+    </script>
 
+  <!-- Style -->
   <link href = "css/main.css" rel="stylesheet">
-  
-  <script type="text/javascript">
-    function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-    document.getElementById("main").style.marginLeft = "250px";
-    }
+ </head>
 
-    function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("main").style.marginLeft= "0";
-    }
-
-    function liked() {
-    
-    };
-
-    function disliked() {
-    
-};
-  </script>
- </head>    
-
-<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="{{ url('/home') }}">Home</a>
-  <a href="{{ url('/about') }}">About</a>
-  <a href="{{ url('/songs') }}">Discover</a>
-  <a href="{{ url('/events') }}">Events Near You</a>
-  <a href="{{ url('/yourMusic') }}">Your Music</a>
-  
-<br><br><br>
-<hr>
-
-<a href="{{ route('logout') }}"
-   onclick="event.preventDefault();
-                 document.getElementById('logout-form').submit();">
-    {{ __('Logout') }}
-</a>
-
-<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-    @csrf
-</form>
-</div>
-
-<span onclick="openNav()">
-    <img src="images/hamburger_menu_icon.png" id="hamburger" alt = "hamburger_icon" width="40px" height="40px" >
-</span>
-
-<div id="main">
-    <div class="container">
+    <div class="container" id="top-row">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <h2 class="chunky_header">Your Music</h2>
@@ -68,44 +27,33 @@
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class="col-md-3">
-                <div id="dislike_button" style="float:right; margin-top:160px;">
-                  <button class="btn btn-danger" id="dislike_btn" onClick="disliked()">
-                    Dislike
-                  </button>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="song_results" style="text-align:center;">
-                    <div class="song_object" style="width:330px; height:400px; display:inline-block; border:1px solid black;">
-                      <table class="table" style="text-align:left !important">
-                        <tr>
-                            <td>Song Title:</td>
-                        </tr>
-                        <tr>
-                            <td>Artist:</td>
-                        </tr>
-                        <tr>
-                            <td>Album:</td>
-                        </tr>
-                        <tr>
-                            <td>Genre:</td>
-                        </tr>
-                        <tr>
-                            <td>Year:</td>
-                        </tr>
-                       </table>
+            <div class="col-md-6">               
+                    <div id="song_item">
+                    @if (count($songs) === 0)
+                            <p>There are no songs!</p>
+                        @else
+                        @foreach ($songs as $song)
+                        <ul>
+                            <li><b>{{ $song->title }}</b></li>
+                            <li>{{ $song->artist }}</li>
+                            <li>
+                                <a href="{{ route('song_ratings.create', $song->id) }}" style="float:right;" class="btn btn-primary">Rate Song</a>
+                            </li>
+                            <li>{{ $song->album }}</li>
+                            <li>{{ $song->genre }}</li>
+                            <li>{{ $song->year }}</li>
+                            <li>     
+                                <audio controls style="width:100%; height:18px;">
+                                    <source src="{{ $song->song_link }}" type="audio/mpeg">
+                                </audio>
+                            </li>
+                           
+                        </ul>
+                        @endforeach
+                    @endif
                     </div>
-                </div>
             </div>
-            <div class="col-md-3">
-           
-                <div class="like_button" style="margin-top:160px;">
-                    <button class="btn btn-success" id="like_btn" onClick="liked()">
-                        Like
-                    </button>
-                </div> 
-            </div>
+            
         </div>
     </div>
 </div>

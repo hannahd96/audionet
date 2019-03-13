@@ -7,29 +7,68 @@
     font-weight: 400;
 }
 body{
-    background-color: #e9ebee;
-    /* background-image: url('back_one.jpg'); */
+    background-color: #ffffff;
+    /* background-image: url('gradient_back.jpg'); 
+    background-repeat: no-repeat;
+    background-size: cover; */
 }
 
-#hamburger{
-  margin-left:20px; 
-  margin-top:70px;
-  width: 40px;
-  height: 40px;
+.down_arrow{
+  font-size:30px; 
+  font-weight:bold; 
+  text-align:center; 
+  float:center; 
+  color: #1a1a1a;
 }
-#mySidenav a{
-  font-size:20px;
+
+.down_arrow:hover{
+  text-decoration: none;
+  color:black;
+}
+
+#top-row{
+  margin-top:120px;
+}
+
+nav{
+  height:120px;
 }
 
 .navbar-laravel{
-  background-color: #1a1a1a !important;
   padding:10px !important;
-}
-.navbar-brand{
+  background-color: #232323;
   color:white !important;
+}
+
+.navbar-brand{
+  padding-left: 20px;
+  margin-right:100px;
   font-weight: bold;
   font-size:18px;
+  color:white !important;
 }
+
+.nav-link{
+  color:white !important;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+  color:white;
+  font-weight: bold;
+  font-size: 30px;
+  letter-spacing: 1px;
+}
+
+#music_lib_btn{
+  margin-top:25px;
+}
+
 .card-header{
   font-weight: 200;
 }
@@ -37,11 +76,12 @@ body{
     margin-block-start: 0.83em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
-    font-size: 32px;
+    font-size: 26px;
     font-weight: 900;
     letter-spacing: -0.015em;
     line-height: 1.3;
 }
+
 
 .user_story{
     height:80px;
@@ -50,7 +90,7 @@ body{
     font-size:12px;
     text-align: center;
     text-decoration: none;
-    color: black;
+    
 }
 
 .user_story:hover{
@@ -59,80 +99,20 @@ body{
 }
 
 #story_img{
-  height:60px; 
-  width:60px; 
+  height:80px; 
+  width:80px; 
   border-radius:50%;
+  margin-bottom: 8px;
+  font-weight: bold;
 }
 
-.feed_item{
-    width:100%;
-    padding:15px;
-    margin-top:10px;
-    margin-bottom: 10px;
-    border:1px solid #dddfe2;
-    background-color:#ffffff;
+#story_img:hover{
+  opacity:0.7;
 }
 
-.feed_item_image{
-    text-align:center;
-}
-
-#feed_item_date{
-    padding:0px;
-    margin:0px;
-    font-size:12px;
-    color:grey;
-}
-
+/* 
 /* The side navigation menu */
-.sidenav {
-    height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
-    top: 0; /* Stay at the top */
-    left: 0;
-    background-color: #111; /* Black*/
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-  }
-  
-  /* The navigation menu links */
-  .sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-  }
-  
-  /* When you mouse over the navigation links, change their color */
-  .sidenav a:hover {
-    color: #f1f1f1;
-  }
-  
-  /* Position and style the close button (top right corner) */
-  .sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-  }
-  
-  /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-  #main {
-    transition: margin-left .5s;
-    padding: 20px;
-  }
-  
-  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-  @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-  }
+/*  */
 
   #detail{
     list-style:none;
@@ -216,50 +196,6 @@ body{
   margin:20px 0px 20px 0px;
 }
 
-
-/*   START OF SCROLL BAR */
-/* width */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: lightgray; 
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: grey; 
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: black; 
-}
-/*   END OF SCROLL BAR   */
-
-/* Search Bar */
-input[type=text] {
-  width: 140px;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  font-size: 11px;
-  background-image: url('searchicon.png');
-  background-position: 10px 10px; 
-  background-repeat: no-repeat;
-  padding: 6px 15px 6px 10px;
-  -webkit-transition: width 0.4s ease-in-out;
-  transition: width 0.4s ease-in-out;
-}
-
-input[type=text]:focus {
-   width: 70%;
-  /*background-color: black;
-  color:white; */
-}
-
 #sort_btn{
   font-size:13px;
   padding:5px 10px 5px 10px;
@@ -269,14 +205,75 @@ input[type=text]:focus {
   padding:15px;
   margin-top:10px;
   margin-bottom: 10px;
-  border:1px solid #dddfe2;
-  background-color:#ffffff;
+  /* border:1px solid #dddfe2; */
+  background-color: rgb(255, 255, 255, 0.2);
 }
 .popular_song_item{
   font-size: 14px;
 }
 
-#feed_items{
-  height:400px;
-  overflow:auto;
+.rec_songs_container{
+  width:100%;
+  padding:15px;
+  margin-top:10px;
+  margin-bottom: 10px;
+  /* border:1px solid #dddfe2; */
+  background-color: rgb(255, 255, 255, 0.2);
+}
+
+#showContainer {
+  /* Main wrapper for all images */
+  height:300px;
+  padding: 0;
+  margin-top: 8px;
+  overflow: hidden;
+  position: relative;
+  background-color: rgb(255, 255, 255, 0.2);
+}
+#showContainer img{
+  width:70%;
+  height:80%;
+  padding-left:40px;
+}
+
+.slideshow {
+  /* Main wrapper for all images */
+  height:300px;
+  padding: 0;
+  margin-top: 8px;
+  overflow: hidden;
+  position: relative;
+  background-color: rgb(255, 255, 255, 0.2);
+}
+#song_item{
+  width:70%;
+  height:80%;
+  padding-left:40px;
+}
+.navButton {
+  /* Make buttons look nice */ 
+  cursor: pointer;
+  color: black;
+  font-size: 14px;
+  user-select: none;
+  padding: 140px 5px 0px 5px;
+}
+
+.navButton:hover {
+  opacity: 1;
+}
+.caption {
+  float: right;
+}
+.imageContainer:not(:first-child) {
+  /* Hide all images except the first */
+  display: none;
+}
+
+ul{
+  list-style: none;
+}
+
+#song_item li{
+  margin:10px 0px 10px 0px;
 }

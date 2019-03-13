@@ -9,18 +9,35 @@
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Exo|Julius+Sans+One|Questrial|Varela" rel="stylesheet">
 
+  <style>
+      input[type=text], select {
+      width: 60%;
+      padding: 6px 14px;
+      margin: 2px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    input[type=submit] {
+      width: 60%;
+      background-color: #4CAF50;
+      color: white;
+      padding: 6px 14px;
+      margin: 2px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+      background-color: #45a049;
+    }  
+  </style>
+  
   <script>
-    function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-    document.getElementById("main").style.marginLeft = "250px";
-    }
-
-    function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("main").style.marginLeft= "0";
-    }
-
-    // hide #back-top first
+        // hide #back-top first
 $("#back-top").hide();
 
 // fade in #back-top
@@ -135,37 +152,10 @@ function sortTableOldest() {
 
 </head>    
 
-<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="{{ url('/home') }}">Home</a>
-  <a href="{{ url('/about') }}">About</a>
-  <a href="{{ url('/songs') }}">Discover</a>
-  <a href="{{ url('/events') }}">Events Near You</a>
-  <a href="{{ url('/yourMusic') }}">Your Music</a>
-  
-<br><br><br>
-<hr>
-
-  <a href="{{ route('logout') }}"
-    onclick="event.preventDefault();
-                  document.getElementById('logout-form').submit();">
-      {{ __('Logout') }}
-  </a>
-
-  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-      @csrf
-  </form>
-</div>
-
-<span onclick="openNav()">
-    <img src="images/hamburger_menu_icon.png" id="hamburger" alt = "hamburger_icon" width="40px" height="40px" >
-</span>
-
-<div id="main">
-    <div class="container">
+    <div class="container" id="top-row">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <h2 class="chunky_header">Discover</h2>
+                <h2 class="chunky_header">Music Library</h2>
                     <p class="description">
                         Explore the AudioNet music library to discover new songs, artists, albums and much more. 
                         With hundreds of songs to choose from, AudioNet offers a wide range of various music styles
@@ -187,8 +177,8 @@ function sortTableOldest() {
                           @if (count($songs) === 0)
                               <p>There are no songs!</p>
                           @else
-                              <table class="table table-striped table-dark" id="myTable">
-                                  <thead style="background-color:black;
+                              <table class="table table-striped" id="myTable">
+                                  <thead style="background-color:black; color:white;
                                   font-weight: bold;">
                                       <th>Title</th>
                                       <th>Artist</th>

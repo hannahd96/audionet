@@ -15,6 +15,14 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Exo|Julius+Sans+One|Questrial|Varela" rel="stylesheet">
+
+  <!-- <link href="{{ asset('css/main.css') }}" rel="stylesheet" type="text/css">
+  <link href="{{ asset('uploads/avatars/..') }}" rel="stylesheet" type="text/css"> -->
+  <!-- <link href = "main.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script> -->
+
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -24,36 +32,23 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container" style="margin-top:12.5px; margin-bottom:12.5px;">
-                <a class="navbar-brand" href="{{ url('/home') }}" style="color:white !important">
+                <a class="navbar-brand" href="{{ url('/home') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                 <!--  <a href="{{ url('/home') }}"> 
-                        <ul class="navbar-nav mr-auto">
-                            <div id="logo_left_part">
-                                <img src="images/audioNetlogo.png" alt="logo" style="width:31px; 
-                                                                                    height:27px; 
-                                                                                    padding:0px; 
-                                                                                    margin:0px 5px 0px 0px;">
-                            </div>
-                            <div id="logo_middle_part">
-                                <img src="images/black_line.png" alt="black_line" style="height:30px; 
-                                                                                        width:20px;
-                                                                                        margin:0px 5px 0px 5px;">                         
-                            </div>
-                            <div id="logo_right_part">
-                                <img src="images/word_logo.png" alt="word_logo" style="height:20px;
-                                                                                        width:80px;">
-                            </div>
-                        </ul>
-                    </a> -->
-                    
-          
+                <div class="collapse navbar-collapse" id="navbarSupportedContent" style="font-weight:bold !important">
+                            
+                    <a class="nav-link" href="{{ url('/about') }}" style="position:relative; padding:0px 30px 0px 30px;">About Us</a>
+                
+                    <a class="nav-link" href="{{ url('/events') }}" style="position:relative; padding:0px 30px 0px 30px;">Events Near You</a>
+                
+                    <a class="nav-link" href="{{ url('/songs') }}" style="position:relative; padding:0px 30px 0px 30px;">Music Library</a>
+
+                    <a class="nav-link" href="{{ url('/yourMusic') }}" style="position:relative; padding:0px 30px 0px 30px;">Your Music</a>
+               
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
@@ -67,15 +62,26 @@
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item dropdown">
-                                <a href="{{ url('/profile') }}" style="position:relative; padding-left:50px; color:white !important;">
+                            <li class="nav-item">
+                                <a href="{{ url('/profile') }}" style="position:relative; padding-left:50px; font-weight: bold; color:white !important;">
                                     <img src="uploads/avatars/{{ Auth::user()->avatar }}" style="width:30px; height:30px; position:absolute; left:10px; border-radius:50%;">
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a href="{{ route('logout') }}" class="nav-link" style="font-size:10px; display:inline;" 
+                                   onclick="event.preventDefault(); 
+                                   document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
+                            </li>
                         @endguest
                     </ul>
-                </div>
+                  
+                </div>               
             </div>
         </nav>
 
