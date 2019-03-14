@@ -48,9 +48,9 @@ class Song extends Model
         // return the result (i.e. avg)
         return $result;
     }
-
+    // recommends 5 random songs, changes every time page refreshes
     public static function recommended(){
-        //
+        return Song::inRandomOrder()->take(5)->get();
     }
 
 

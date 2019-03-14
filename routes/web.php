@@ -50,6 +50,7 @@ Route::auth();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/songs', 'SongController@index')->name('songs');
 Route::get('/yourMusic', 'SongRatingController@yourMusic')->name('yourMusic');
+Route::get('songs.show', 'SongController@show')->name('songs.show');
 
 // user stories
 // Route::get('/add_story', 'SongController@add_story')->name('songs');

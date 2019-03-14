@@ -3,11 +3,11 @@
 @section('content')
 
 <div class="container">
-    <div class="row">
+    <div class="row justify-content-center">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Add Song Rating
+                    Add Song Rating for {{ $song->title }}
                 </div>
 
                 <div class="panel-body">
@@ -28,7 +28,7 @@
                             <br>
                             <i>*rate the song out of 10. </i>
                             <br><br>
-                            <select name="rating" id="rating">
+                            <select name="rating" id="rating" class="form-control">
                                 <option {{ (old('rating') == '1' ) ? 'selected' : '' }}>1</option>
                                 <option {{ (old('rating') == '2' ) ? 'selected' : '' }}>2</option>
                                 <option {{ (old('rating') == '3' ) ? 'selected' : '' }}>3</option>

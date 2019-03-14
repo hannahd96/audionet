@@ -6,27 +6,42 @@
   <link href = "css/main.css" rel="stylesheet">
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
-  
-  
+
     <script>
     $(document).ready(function() {
-  $('#previous').on('click', function(){
-    // Change to the previous image
-    $('#im_' + currentImage).stop().fadeOut(1);
-    decreaseImage();
-    $('#im_' + currentImage).stop().fadeIn(1);
-  }); 
-  $('#next').on('click', function(){
-    // Change to the next image
-    $('#im_' + currentImage).stop().fadeOut(1);
-    increaseImage();
-    $('#im_' + currentImage).stop().fadeIn(1);
-  }); 
+        $('#previous').on('click', function(){
+            // Change to the previous image
+            $('#im_' + currentImage).stop().fadeOut(1);
+            decreaseImage();
+            $('#im_' + currentImage).stop().fadeIn(1);
+        }); 
+        $('#next').on('click', function(){
+            // Change to the next image
+            $('#im_' + currentImage).stop().fadeOut(1);
+            increaseImage();
+            $('#im_' + currentImage).stop().fadeIn(1);
+        }); 
 
-// scroll to bottom function
-  $("a[href='#bottom']").click(function() {
-    $("html, body").animate({ scrollTop: $(document).height() }, "slow");
-  return false;
+// hide #back-top first
+$("#back-top").hide();
+
+// fade in #back-top
+$(function () {
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+            $('#back-top').fadeIn();
+        } else {
+            $('#back-top').fadeOut();
+        }
+    });
+
+    // scroll body to 0px on click
+    $('#back-top a').click(function () {
+        $('body,html').animate({
+            scrollTop: 0
+        }, 800);
+        return false;
+    });
 });
 
   var currentImage = 1;
@@ -75,14 +90,6 @@
         <img src="css/background_11.jpg" alt="cover_photo" style="width:100%; height:500px;">
     </div>
 </div>   
-    
-    <!-- <div class="row justify-conent-center" style="margin-top:24%; margin-left:49%">
-        <a href="#bottom" class="down_arrow" style="font-size:48px;">
-        &#x2B07;
-            
-            <img src="css/down_arrow.jpg" alt="downArrow" style="width:30px; height:15px;"> 
-        </a>
-    </div>   -->
      
     <br>
 
@@ -140,25 +147,31 @@
                            </table>
                         </div>
                     </div>
-                    <!-- <div class="rec_songs_container">
+                    <div class="rec_songs_container">
                         <div class="rec_songs_table">
                            <h5>Suggestions For You</h5>
-                                
-                           
-                             
-
-                            <table class="table">
+                           <table class="table">
                                 <th>Song Title</th>
                                 <th>Artist</th>
                                 <th>Listen</th>
                                 <tbody>
-                                
+                                @foreach (App\Song::recommended(5) as $song)
+                                    <tr>
+                                        <td>{{ $song->title }}</td>
+                                        <td>{{ $song->artist }}</td>
+                                        <td>
+                                            <audio controls style="width:100%; height:18px;">
+                                                <source src="{{ $song->song_link }}" type="audio/mpeg">
+                                            </audio>
+                                        </td>
+                                    </tr>
+                                @endforeach
                                 </tbody>
                             </table>
 
 
                         </div>
-                    </div> -->
+                    </div>
                     <div class="rec_songs_container">
                         <div class="rec_songs_table">
                            <h5>Pop Music</h5>
@@ -195,16 +208,16 @@
                                 <th>Listen</th>
                                 <tbody>
                                 @foreach (App\Song::electronicMusic(5) as $song)
-                                    <tr>
-                                        <td>{{ $song->title }}</td>
-                                        <td>{{ $song->artist }}</td>
-                                        <td>
-                                            <audio controls style="width:100%; height:18px;">
-                                                <source src="{{ $song->song_link }}" type="audio/mpeg">
-                                            </audio>
-                                        </td>
-                                    </tr>
-                                    @endforeach
+                                <tr>
+                                    <td>{{ $song->title }}</td>
+                                    <td>{{ $song->artist }}</td>
+                                    <td>
+                                        <audio controls style="width:100%; height:18px;">
+                                            <source src="{{ $song->song_link }}" type="audio/mpeg">
+                                        </audio>
+                                    </td>
+                                </tr>
+                                @endforeach
                                 </tbody>
                             </table>
 
@@ -213,31 +226,30 @@
                     </div>
             </div>
         </div>
-        <div class="col-md-4">                
-            
-        <div id="showContainer" style="margin-top:12%;">
-            
-            <div class="navButton" id="previous" style = "float:left">
-                <
-            </div>
-            <div class="navButton" id="next" style = "float:right">
-                >
-            </div>
-
-                <div class="imageContainer" id="im_1">
-                <img src="css/blog_posts/news_01.jpg">
-                </div>
-
-                <div class="imageContainer" id="im_2">
-                    <img src="css/blog_posts/news_02.jpg" >
-                </div>
-
-                <div class="imageContainer" id="im_3">
-                    <img src="css/blog_posts/news_3.jpg" >
-                </div>
-
+        <div class="col-md-4" style="margin-top:2%;">                
+            <h5>News Feed</h5>
+            <div id="showContainer" style="margin-top:5%;">
                 
-              
+                <div class="navButton" id="previous" style = "float:left">
+                ◀
+                </div>
+                <div class="navButton" id="next" style = "float:right">
+                ▶
+                </div>
+    
+                    <div class="imageContainer" id="im_1">
+                        <img src="css/blog_posts/news_01.jpg">
+                    </div>
+    
+                    <div class="imageContainer" id="im_2">
+                        <img src="css/blog_posts/news_02.jpg" >
+                    </div>
+    
+                    <div class="imageContainer" id="im_3">
+                        <img src="css/blog_posts/news_3.jpg" >
+                    </div>
+                
+              </div>
                 
             </div>
 
@@ -245,4 +257,10 @@
     </div>
 </div>
 </div>
+<!-- Scroll button -->
+<div id="scroll_top_auto" style="float:right; text-align:right;">
+        <p id="back-top">
+            <a href="#top"><span style="font-size:40px;">^</span></a>
+        </p>
+    </div>
 @endsection

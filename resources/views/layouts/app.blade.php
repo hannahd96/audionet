@@ -17,8 +17,8 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Exo|Julius+Sans+One|Questrial|Varela" rel="stylesheet">
 
-  <!-- <link href="{{ asset('css/main.css') }}" rel="stylesheet" type="text/css">
-  <link href="{{ asset('uploads/avatars/..') }}" rel="stylesheet" type="text/css"> -->
+  <link href="{{ asset('css/main.css') }}" rel="stylesheet" type="text/css">
+  <!-- <link href="{{ asset('uploads/avatars') }}" rel="stylesheet" type="text/css"> -->
   <!-- <link href = "main.css" rel="stylesheet"> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script> -->

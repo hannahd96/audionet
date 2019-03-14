@@ -158,7 +158,7 @@ function sortTableOldest() {
                 <h2 class="chunky_header">Music Library</h2>
                     <p class="description">
                         Explore the AudioNet music library to discover new songs, artists, albums and much more. 
-                        With hundreds of songs to choose from, AudioNet offers a wide range of various music styles
+                        With a selection of songs to choose from, AudioNet offers a wide range of various music styles
                         and genres.
                     </p>
                     <!-- SEARCHBAR -->

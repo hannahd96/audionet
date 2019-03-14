@@ -18,6 +18,11 @@ class SongController extends Controller
         ));
     }
 
+    public function show($id){
+        $song = Song::findOrFail($id);
+        return view('songs.show');
+    }
+
     public function add_story(){
 
         $songs = Song::all();

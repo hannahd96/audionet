@@ -1,10 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<head>
-<link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
-</head>
-<div class="container" style="margin-top:150px;">
+
+<div class="container" id="top-row">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">

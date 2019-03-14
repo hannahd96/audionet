@@ -27,9 +27,7 @@
                 <br><br>
             <div id="video" style="margin:0px; padding:0px;">
                 <video width="70%" style="margin-left:15%;" controls>
-                    <source src="about_vid.mp4" type="video/mp4">
-                    <source src="about_vid.ogg" type="video/ogg">
-                    Your browser does not support the video tag.
+                    <source src="css/AudioNet_demo.mp4" type="video/mp4">
                 </video>
             </div>
                
