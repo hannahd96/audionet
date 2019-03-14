@@ -87,7 +87,7 @@ $(function () {
         </div>
     </div>
      <!-- cover photo -->
-        <img src="css/background_11.jpg" alt="cover_photo" style="width:100%; height:500px;">
+        <img src="css/background_11.jpg" alt="cover_photo" style="width:100%; height:700px;">
     </div>
 </div>   
      
@@ -140,7 +140,7 @@ $(function () {
                                     <tr>
                                         <td>{{ $song->title }}</td>
                                         <td>{{ $song->artist }}</td>
-                                        <td>#
+                                        <td>
                                         <!-- link to song stored on server -->
                                             <audio controls style="width:100%; height:18px;">
                                                 <source src="{{ $song->song_link }}" type="audio/mpeg">

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 14, 2019 at 01:06 PM
--- Server version: 10.1.26-MariaDB
--- PHP Version: 7.1.9
+-- Generation Time: Mar 14, 2019 at 06:05 PM
+-- Server version: 10.1.35-MariaDB
+-- PHP Version: 7.2.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -124,45 +124,45 @@ CREATE TABLE `songs` (
 --
 
 INSERT INTO `songs` (`id`, `title`, `artist`, `album`, `genre`, `year`, `created_at`, `updated_at`, `song_link`) VALUES
-(1, 'One Dance', 'Drake', 'Views', 'Hip Hop', 2016, NULL, NULL, '/audionet_songs/OneDance.mp3'),
-(2, 'Pillowtalk', 'Zayn', 'Mind of Mine', 'Pop', 2016, NULL, NULL, '/audionet_songs/Pillowtalk.mp3'),
-(3, 'Cheap Thrills', 'Sia', 'This Is Acting', 'Pop', 2016, NULL, NULL, '/audionet_songs/CheapThrills.mp3'),
-(4, 'All The Stars', 'Kendrick Lamar, SZA', 'Black Panthar (Soundtrack)', 'Hip Hop', 2015, NULL, NULL, '/audionet_songs/AllTheStars.mp3'),
-(5, 'Pictures of You', 'The Cure', 'Disintegration', 'Alternative', 1989, NULL, NULL, '/audionet_songs/PicturesOfYou.mp3'),
-(6, 'Ordinary World', 'Duran Duran', 'Duran Duran', 'Rock', 1993, NULL, NULL, '/audionet_songs/OrdinaryWorld.mp3'),
-(7, 'Love Yourself', 'Justin Bieber', 'Purpose', 'Pop', 2015, NULL, NULL, '/audionet_songs/LoveYourself.mp3'),
-(8, 'Cry Me a River', 'Michael Bublé', 'Crazy Love', 'Jazz', 2009, NULL, NULL, '/audionet_songs/CryMeARiver.mp3'),
-(9, 'Good for You', 'Selena Gomez', 'Revival', 'Pop', 2015, NULL, NULL, '/audionet_songs/GoodForYou.mp3'),
-(10, 'Midnight City', 'M83', 'Hurry Up, We\'re Dreaming', 'Synth-Pop', 2011, NULL, NULL, '/audionet_songs/MidnightCity.mp3'),
-(11, 'Summer', 'Calvin Harris', 'Summer', 'Electronic', 2014, NULL, NULL, '/audionet_songs/Summer.mp3'),
-(12, 'I Feel You', 'Depeche Mode', 'Songs of Faith and Devotion', 'Synth-Pop', 1992, NULL, NULL, '/audionet_songs/IFeelYou.mp3'),
-(13, 'Hey Now', 'London Grammar', 'If You Wait', 'Indie', 2013, NULL, NULL, '/audionet_songs/HeyNow.mp3'),
-(15, 'When You Were Young', 'The Killers', 'Sam\'s Town', 'Indie', 2009, NULL, NULL, '/audionet_songs/WhenWeWereYoung.mp3'),
-(16, 'Can\'t Feel My Face', 'The Weeknd', 'Beauty Behind the Madness', 'Pop', 2015, NULL, NULL, '/audionet_songs/CantFeelMyFace.mp3'),
-(17, 'Lean On', 'DJ Snake', 'Peace Is The Mission', 'Electronic', 2015, NULL, NULL, '/audionet_songs/LeanOn.mp3'),
-(19, 'The Hills', 'The Weeknd', 'Beauty Behind the Madness', 'Pop', 2015, NULL, NULL, '/audionet_songs/TheHills.mp3'),
-(20, 'See You Again', 'Wiz Khalifa', 'Furious 7: Original Motion Picture Soundtrack', 'Hip Hop', 2015, NULL, NULL, '/audionet_songs/SeeYouAgain.mp3'),
-(21, 'Trap Queen', 'Fetty Wap', 'Fetty Wap', 'Hip Hop', 2015, NULL, NULL, '/audionet_songs/TrapQueen.mp3'),
-(22, 'Love Me Like You Do', 'Ellie Goulding', 'Fifty Shade of Grey (Original Motion Picture Soundtrack)', 'Electropop', 2015, NULL, NULL, '/audionet_songs/LoveMeLikeYouDo.mp3'),
-(23, 'Want to Want Me', 'Jason Derulo', 'Everything Is 4', 'Electronic', 2015, NULL, NULL, '/audionet_songs/WantToWantMe.mp3'),
-(24, 'Earned It', 'The Weeknd', 'Fifty Shade of Grey (Original Motion Picture Soundtrack)', 'Pop', 2015, NULL, NULL, '/audionet_songs/EarnedIt.mp3'),
-(25, 'What Do You Mean?', 'Justin Bieber', 'Purpose', 'Pop', 2015, NULL, NULL, '/audionet_songs/WhatDoYouMean.mp3'),
-(26, 'Hey Mama', 'David Guetta', 'Listen', 'Electronic', 2015, NULL, NULL, '/audionet_songs/HeyMama.mp3'),
-(27, 'Stitches', 'Shawn Mendes', 'Handwritten', 'Pop', 2015, NULL, NULL, '/audionet_songs/Stitches.mp3'),
-(29, 'Worth It', 'Fifth Harmony', 'Reflection', 'Pop', 2015, NULL, NULL, '/audionet_songs/WorthIt.mp3'),
-(30, 'Marvin Gaye', 'Charlie Puth', 'Some Type of Love', 'Pop', 2015, NULL, NULL, '/audionet_songs/MarvinGaye.mp3'),
-(31, 'Drag Me Down', 'One Direction ', 'Made in the A.M', 'Pop', 2015, NULL, NULL, '/audionet_songs/DragMeDown.mp3'),
-(32, 'Ayo', 'Tyga', 'Fan of a Fan', 'Hip Hop', 2015, NULL, NULL, '/audionet_songs/Ayo.mp3'),
-(33, 'Like I\'m Gonna Lose You', 'Meghan Trainor', 'Title', 'Pop', 2015, NULL, NULL, '/audionet_songs/LikeImGonnaLoseYou.mp3'),
-(34, 'Hello', 'Adele', '25', 'Pop', 2015, NULL, NULL, '/audionet_songs/Hello.mp3'),
-(35, 'Dear Future Husband', 'Meghan Trainor', 'Title', 'Pop', 2015, NULL, NULL, '/audionet_songs/DearFutureHusband.mp3'),
-(36, 'Sorry', 'Justin Bieber', 'Sorry', 'Pop', 2015, NULL, NULL, '/audionet_songs/Sorry.mp3'),
-(37, 'Cool for the Summer', 'Demi Lovato', 'Confident', 'Pop', 2015, NULL, NULL, '/audionet_songs/CoolForTheSummer.mp3'),
-(38, 'Girls Like You', 'Maroon 5', 'LOVE', 'Pop', 2018, NULL, NULL, '/audionet_songs/GirlsLikeYou.mp3'),
-(39, 'I Like It', 'Cardi B', 'Invasion of Privacy', 'Hip Hop', 2018, NULL, NULL, '/audionet_songs/ILikeIt.mp3'),
-(40, 'SICKO MODE', 'Travis Scott', 'Astroworld', 'Hip Hop', 2018, NULL, NULL, '/audionet_songs/SickoMode.mp3'),
-(41, 'In My Feelings', 'Drake', 'Scorpion', 'Hip Hop', 2018, NULL, NULL, '/audionet_songs/InMyFeelings.mp3'),
-(42, 'Better Now', 'Post Malone', 'Beerbongs & Bentleys', 'Hip Hop', 2018, NULL, NULL, '/audionet_songs/BetterNow.mp3');
+(1, 'One Dance', 'Drake', 'Views', 'Hip Hop', 2016, NULL, NULL, '/audionet/audionet_songs/OneDance.mp3'),
+(2, 'Pillowtalk', 'Zayn', 'Mind of Mine', 'Pop', 2016, NULL, NULL, '/audionet/audionet_songs/Pillowtalk.mp3'),
+(3, 'Cheap Thrills', 'Sia', 'This Is Acting', 'Pop', 2016, NULL, NULL, '/audionet/audionet_songs/CheapThrills.mp3'),
+(4, 'All The Stars', 'Kendrick Lamar, SZA', 'Black Panthar (Soundtrack)', 'Hip Hop', 2015, NULL, NULL, '/audionet/audionet_songs/AllTheStars.mp3'),
+(5, 'Pictures of You', 'The Cure', 'Disintegration', 'Alternative', 1989, NULL, NULL, '/audionet/audionet_songs/PicturesOfYou.mp3'),
+(6, 'Ordinary World', 'Duran Duran', 'Duran Duran', 'Rock', 1993, NULL, NULL, '/audionet/audionet_songs/OrdinaryWorld.mp3'),
+(7, 'Love Yourself', 'Justin Bieber', 'Purpose', 'Pop', 2015, NULL, NULL, '/audionet/audionet_songs/LoveYourself.mp3'),
+(8, 'Cry Me a River', 'Michael Bublé', 'Crazy Love', 'Jazz', 2009, NULL, NULL, '/audionet/audionet_songs/CryMeARiver.mp3'),
+(9, 'Good for You', 'Selena Gomez', 'Revival', 'Pop', 2015, NULL, NULL, '/audionet/audionet_songs/GoodForYou.mp3'),
+(10, 'Midnight City', 'M83', 'Hurry Up, We\'re Dreaming', 'Synth-Pop', 2011, NULL, NULL, '/audionet/audionet_songs/MidnightCity.mp3'),
+(11, 'Summer', 'Calvin Harris', 'Summer', 'Electronic', 2014, NULL, NULL, '/audionet/audionet_songs/Summer.mp3'),
+(12, 'I Feel You', 'Depeche Mode', 'Songs of Faith and Devotion', 'Synth-Pop', 1992, NULL, NULL, '/audionet/audionet_songs/IFeelYou.mp3'),
+(13, 'Hey Now', 'London Grammar', 'If You Wait', 'Indie', 2013, NULL, NULL, '/audionet/audionet_songs/HeyNow.mp3'),
+(15, 'When You Were Young', 'The Killers', 'Sam\'s Town', 'Indie', 2009, NULL, NULL, '/audionet/audionet_songs/WhenWeWereYoung.mp3'),
+(16, 'Can\'t Feel My Face', 'The Weeknd', 'Beauty Behind the Madness', 'Pop', 2015, NULL, NULL, '/audionet/audionet_songs/CantFeelMyFace.mp3'),
+(17, 'Lean On', 'DJ Snake', 'Peace Is The Mission', 'Electronic', 2015, NULL, NULL, '/audionet/audionet_songs/LeanOn.mp3'),
+(19, 'The Hills', 'The Weeknd', 'Beauty Behind the Madness', 'Pop', 2015, NULL, NULL, '/audionet/audionet_songs/TheHills.mp3'),
+(20, 'See You Again', 'Wiz Khalifa', 'Furious 7: Original Motion Picture Soundtrack', 'Hip Hop', 2015, NULL, NULL, '/audionet/audionet_songs/SeeYouAgain.mp3'),
+(21, 'Trap Queen', 'Fetty Wap', 'Fetty Wap', 'Hip Hop', 2015, NULL, NULL, '/audionet/audionet_songs/TrapQueen.mp3'),
+(22, 'Love Me Like You Do', 'Ellie Goulding', 'Fifty Shade of Grey (Original Motion Picture Soundtrack)', 'Electropop', 2015, NULL, NULL, '/audionet/audionet_songs/LoveMeLikeYouDo.mp3'),
+(23, 'Want to Want Me', 'Jason Derulo', 'Everything Is 4', 'Electronic', 2015, NULL, NULL, '/audionet/audionet_songs/WantToWantMe.mp3'),
+(24, 'Earned It', 'The Weeknd', 'Fifty Shade of Grey (Original Motion Picture Soundtrack)', 'Pop', 2015, NULL, NULL, '/audionet/audionet_songs/EarnedIt.mp3'),
+(25, 'What Do You Mean?', 'Justin Bieber', 'Purpose', 'Pop', 2015, NULL, NULL, '/audionet/audionet_songs/WhatDoYouMean.mp3'),
+(26, 'Hey Mama', 'David Guetta', 'Listen', 'Electronic', 2015, NULL, NULL, '/audionet/audionet_songs/HeyMama.mp3'),
+(27, 'Stitches', 'Shawn Mendes', 'Handwritten', 'Pop', 2015, NULL, NULL, '/audionet/audionet_songs/Stitches.mp3'),
+(29, 'Worth It', 'Fifth Harmony', 'Reflection', 'Pop', 2015, NULL, NULL, '/audionet/audionet_songs/WorthIt.mp3'),
+(30, 'Marvin Gaye', 'Charlie Puth', 'Some Type of Love', 'Pop', 2015, NULL, NULL, '/audionet/audionet_songs/MarvinGaye.mp3'),
+(31, 'Drag Me Down', 'One Direction ', 'Made in the A.M', 'Pop', 2015, NULL, NULL, '/audionet/audionet_songs/DragMeDown.mp3'),
+(32, 'Ayo', 'Tyga', 'Fan of a Fan', 'Hip Hop', 2015, NULL, NULL, '/audionet/audionet_songs/Ayo.mp3'),
+(33, 'Like I\'m Gonna Lose You', 'Meghan Trainor', 'Title', 'Pop', 2015, NULL, NULL, '/audionet/audionet_songs/LikeImGonnaLoseYou.mp3'),
+(34, 'Hello', 'Adele', '25', 'Pop', 2015, NULL, NULL, '/audionet/audionet_songs/Hello.mp3'),
+(35, 'Dear Future Husband', 'Meghan Trainor', 'Title', 'Pop', 2015, NULL, NULL, '/audionet/audionet_songs/DearFutureHusband.mp3'),
+(36, 'Sorry', 'Justin Bieber', 'Sorry', 'Pop', 2015, NULL, NULL, '/audionet/audionet_songs/Sorry.mp3'),
+(37, 'Cool for the Summer', 'Demi Lovato', 'Confident', 'Pop', 2015, NULL, NULL, '/audionet/audionet_songs/CoolForTheSummer.mp3'),
+(38, 'Girls Like You', 'Maroon 5', 'LOVE', 'Pop', 2018, NULL, NULL, '/audionet/audionet_songs/GirlsLikeYou.mp3'),
+(39, 'I Like It', 'Cardi B', 'Invasion of Privacy', 'Hip Hop', 2018, NULL, NULL, '/audionet/audionet_songs/ILikeIt.mp3'),
+(40, 'SICKO MODE', 'Travis Scott', 'Astroworld', 'Hip Hop', 2018, NULL, NULL, '/audionet/audionet_songs/SickoMode.mp3'),
+(41, 'In My Feelings', 'Drake', 'Scorpion', 'Hip Hop', 2018, NULL, NULL, '/audionet/audionet_songs/InMyFeelings.mp3'),
+(42, 'Better Now', 'Post Malone', 'Beerbongs & Bentleys', 'Hip Hop', 2018, NULL, NULL, '/audionet/audionet_songs/BetterNow.mp3');
 
 -- --------------------------------------------------------
 
