@@ -2,20 +2,36 @@
 
 @section('content')
 <head>
-  <!--  <link href="{{ asset('css/mystyle.css') }}" rel="stylesheet" type="text/css"> -->
-  <link href="https://fonts.googleapis.com/css?family=Exo|Julius+Sans+One|Questrial|Varela" rel="stylesheet">
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+
+  <!-- JQuery link needed for "back to top" button -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
-  
-    <script type="text/javascript">
-     
+    <script>
+    // hide #back-top first
+    $("#back-top").hide();
+
+    // fade in #back-top
+        $(function () {
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    $('#back-top').fadeIn();
+                } else {
+                    $('#back-top').fadeOut();
+                }
+            });
+
+            // scroll body to 0px on click
+            $('#back-top a').click(function () {
+                $('body,html').animate({
+                    scrollTop: 0
+                }, 800);
+                return false;
+            });
+        });
     </script>
 
-  <!-- Style -->
-  <link href = "css/main.css" rel="stylesheet">
- </head>
-
+</head>
     <div class="container" id="top-row">
+    <!-- center all content -->
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <h2 class="chunky_header">Your Music</h2>
@@ -27,7 +43,8 @@
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class="col-md-6">               
+            <div class="col-md-6">        
+                   <!-- return all song items as a list item in an unordered list -->
                     <div id="song_item">
                     @if (count($songs) === 0)
                             <p>There are no songs!</p>
@@ -48,7 +65,7 @@
                                 </audio>
                             </li>
                            
-                        </ul>
+                        </ul><br><hr><br>
                         @endforeach
                     @endif
                     </div>
@@ -57,5 +74,10 @@
         </div>
     </div>
 </div>
-
+<!-- Scroll button -->
+<div id="scroll_top_auto" style="float:right; text-align:right;">
+        <p id="back-top">
+            <a href="#top"><span style="font-size:40px;">^</span></a>
+        </p>
+    </div>
 @endsection

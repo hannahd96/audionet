@@ -2,9 +2,7 @@
 
 @section('content')
 <head>
-  <!--  <link href="{{ asset('css/mystyle.css') }}" rel="stylesheet" type="text/css"> -->
-  <link href = "css/main.css" rel="stylesheet">
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+  <!-- JQuery link needed for "back to top" button -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
 
     <script>
@@ -65,7 +63,7 @@ $(function () {
       currentImage = totalImages;
     }
   }
-
+    //   automates the slideshow
   window.setInterval(function() {
     $('#previous').click();
   }, 2500);
@@ -74,19 +72,21 @@ $(function () {
     </script>
  </head>    
 <br><br><br><br>
-
+<!-- center all content -->
 <div class="row justify-content-center" style="width:101.2% !important;">
     <div class="cover_photo" style="width:100%; height:90px;">
     <div class="col-md-12">
+    <!-- centered - centers text overlaying the image -->
     <div class="centered" style="margin-top:17%;">
             Explore our Music Library with hundreds of songs to choose from
             <br>
+            <!-- link to music library -->
             <form action="{{ url('/songs') }}">
                 <input type="submit" class="btn btn-primary" id="music_lib_btn" value="Music Library">
             </form>
         </div>
     </div>
-     
+     <!-- cover photo -->
         <img src="css/background_11.jpg" alt="cover_photo" style="width:100%; height:500px;">
     </div>
 </div>   
@@ -98,14 +98,16 @@ $(function () {
     <table>
         <tbody>
             <tr>
+            <!-- for user logged in to create a story -->
                 <a href="{{ route('stories.create') }}" class="btn btn-link" style="margin-left:130px;">
                     <img src="css/black_plus.png" id="story_img">
                     <p style="margin-top:5px; text-decoration:none; color:black" id="hover_no_dec">Share a song you like</p>
                 </a>
-                
+                    <!-- return a story from objedt stories containing many stories -->
                 @foreach ($stories as $story) 
-
+                    <!-- show other stories by other users. when clicked on they return a view showing song details -->
                 <a href="{{ route('stories.show', $story->id) }}" class="user_story">
+                    <!-- user profile picture -->
                     <img src="uploads/avatars/{{ $story->user->avatar }}" class="image" id="story_img">
                     <p style="margin-top:5px;">{{ $story->user->name }}</p>
                 </a>
@@ -123,6 +125,7 @@ $(function () {
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="container">
+            <!-- each table of songs recommended are stored in their own container -->
                     <div class="popular_song_container">
                         <div class="popular_song_table">
                            <h5>Popular Songs</h5>
@@ -132,11 +135,13 @@ $(function () {
                                 <th>Listen</th>
                                 <tbody>
                                 <!-- return top 5 popular songs -->
+                                <!-- for each song object, return it as a table row -->
                                     @foreach (App\Song::top(5) as $song)
                                     <tr>
                                         <td>{{ $song->title }}</td>
                                         <td>{{ $song->artist }}</td>
-                                        <td>
+                                        <td>#
+                                        <!-- link to song stored on server -->
                                             <audio controls style="width:100%; height:18px;">
                                                 <source src="{{ $song->song_link }}" type="audio/mpeg">
                                             </audio>
@@ -155,6 +160,9 @@ $(function () {
                                 <th>Artist</th>
                                 <th>Listen</th>
                                 <tbody>
+                                <!-- calls function in the model -->
+                                <!-- return top 5 random songs recommended to user -->
+                                <!-- for each song object, return it as a table row -->
                                 @foreach (App\Song::recommended(5) as $song)
                                     <tr>
                                         <td>{{ $song->title }}</td>
@@ -181,7 +189,9 @@ $(function () {
                                 <th>Artist</th>
                                 <th>Listen</th>
                                 <tbody>
-                                
+                                <!-- calls function in the model -->
+                                <!-- return 5 pop songs -->
+                                <!-- for each song object, return it as a table row -->
                                 @foreach (App\Song::popMusic(5) as $song)
                                     <tr>
                                         <td>{{ $song->title }}</td>
@@ -207,6 +217,9 @@ $(function () {
                                 <th>Artist</th>
                                 <th>Listen</th>
                                 <tbody>
+                                <!-- calls function in the model -->
+                                <!-- return 5 electronic songs  -->
+                                <!-- for each song object, return it as a table row -->
                                 @foreach (App\Song::electronicMusic(5) as $song)
                                 <tr>
                                     <td>{{ $song->title }}</td>
@@ -228,15 +241,16 @@ $(function () {
         </div>
         <div class="col-md-4" style="margin-top:2%;">                
             <h5>News Feed</h5>
+            <!-- slideshow of news items -->
             <div id="showContainer" style="margin-top:5%;">
-                
+                <!-- previous and next slide btns -->
                 <div class="navButton" id="previous" style = "float:left">
                 ◀
                 </div>
                 <div class="navButton" id="next" style = "float:right">
                 ▶
                 </div>
-    
+                    <!-- images being returned -->
                     <div class="imageContainer" id="im_1">
                         <img src="css/blog_posts/news_01.jpg">
                     </div>

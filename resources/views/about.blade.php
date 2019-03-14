@@ -1,10 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<head>
-  <!--  <link href="{{ asset('css/mystyle.css') }}" rel="stylesheet" type="text/css"> -->
-  <link href="https://fonts.googleapis.com/css?family=Exo|Julius+Sans+One|Questrial|Varela" rel="stylesheet">
-  <link href = "css/main.css" rel="stylesheet">
 
 <div class="row" id="top-row">
     <div class="col-md-12">
@@ -13,6 +9,7 @@
 </div>
 <div class="container">
     <div class="row justify-content-center">
+    <!-- column displayed on left -->
         <div class="col-md-7">
             <h2 class="chunky_header">About Us</h2>
                 <p> AudioNet is a web app that allows you to share your music taste with friends. 
@@ -25,14 +22,16 @@
                 
                 Check out our demo video down below 
                 <br><br>
-            <div id="video" style="margin:0px; padding:0px;">
-                <video width="70%" style="margin-left:15%;" controls>
+                <!-- video showing demo of website -->
+                <div id="video" style="margin:0px; padding:0px;">
+                <video width="580" height="350" controls>
                     <source src="css/AudioNet_demo.mp4" type="video/mp4">
                 </video>
             </div>
                
            
         </div>
+        <!-- column displayed on right -->
         <div class="col-md-3">
             <h2 class="chunky_header">Technology</h2>
                 <p id="about_para_one">AudioNet is built using a PHP framework called Laravel and front-end framework, Bootstrap. 

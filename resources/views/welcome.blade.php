@@ -1,4 +1,5 @@
 <!doctype html>
+<!-- unlike other pages, styling has to be done directly into this page as it doesnt extend to the app.blade file -->
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
@@ -80,13 +81,15 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
+        <!-- if the user is logged in.. -->
             @if (Route::has('login'))
+            <!-- show these links -->
                 <div class="top-right links">
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
-
+                  
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}">Register</a>
                         @endif
